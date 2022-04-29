@@ -12,12 +12,14 @@ import { AddCandidateDataComponent } from './components/add-candidate-data/add-c
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CandidateDataTableComponent } from './components/candidate-data-table/candidate-data-table.component';
+import { CardsComponentComponent } from './components/cards-component/cards-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddCandidateDataComponent,
-    CandidateDataTableComponent
+    CandidateDataTableComponent,
+    CardsComponentComponent
   ],
   imports: [
     BrowserModule,
