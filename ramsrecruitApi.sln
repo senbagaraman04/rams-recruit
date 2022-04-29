@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1800
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ramsrecruitApi", "ramsrecruitApi\ramsrecruitApi.csproj", "{AFE0FDDF-C1E0-41DF-A417-0341A1F2640B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFE0FDDF-C1E0-41DF-A417-0341A1F2640B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE0FDDF-C1E0-41DF-A417-0341A1F2640B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE0FDDF-C1E0-41DF-A417-0341A1F2640B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE0FDDF-C1E0-41DF-A417-0341A1F2640B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0CA15A7-07D7-43B0-98B3-5C89035B63BB}
+	EndGlobalSection
+EndGlobal

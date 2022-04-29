@@ -1,0 +1,7 @@
+#ignore the packages 
+ramsrecruitApi/.vs/*
+ramsrecruitApi/.vs/ramsrecruitApi/v15/Server/sqlite3/storage.ide-shm
+ramsrecruitApi/.vs/ramsrecruitApi/v15/.suo
+packages/*
+ramsrecruitApi/bin/*
+ramsrecruitApi/obj/*
