@@ -1,0 +1,64 @@
+<p>add-candidate-data works!</p>
+<hr>
+<!-- Add new candidate data goes here-->
+
+<div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="candidateForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+         
+        </mat-form-field>
+ 
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Full Name
+            </mat-label>
+            <input matInput formControlName="fullname" type="text">
+            
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline" >
+            <mat-label> Phone Number
+            </mat-label>
+            <input matInput formControlName="pNumber" type="text" required>
+           
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Primary skills
+            </mat-label>
+            <input matInput formControlName="pSkills" type="text" required>
+           
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Experience
+            </mat-label>
+            <input matInput formControlName="experience" type="text" required>
+            
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Recent Company
+            </mat-label>
+            <input matInput formControlName="rCompany" type="text" required>
+            
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Current CTC
+            </mat-label>
+            <input matInput formControlName="currentCtc" type="text" required>
+            
+          </mat-form-field>
+
+
+         
+
+
+        <button mat-raised-button color="primary" type="submit">Add Candidate Data</button>
+      </form>
+    </div>
+  </div>
