@@ -13,13 +13,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CandidateDataTableComponent } from './components/candidate-data-table/candidate-data-table.component';
 import { CardsComponentComponent } from './components/cards-component/cards-component.component';
+import { InterviewresponseComponent } from './components/interviewresponse/interviewresponse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddCandidateDataComponent,
     CandidateDataTableComponent,
-    CardsComponentComponent
+    CardsComponentComponent,
+    InterviewresponseComponent
   ],
   imports: [
     BrowserModule,

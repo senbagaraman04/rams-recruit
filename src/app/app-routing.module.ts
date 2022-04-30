@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AddCandidateDataComponent } from './components/add-candidate-data/add-candidate-data.component';
 import { CandidateDataTableComponent } from './components/candidate-data-table/candidate-data-table.component';
+import { InterviewresponseComponent } from './components/interviewresponse/interviewresponse.component';
 
 const routes: Routes = [
-  
   {path: 'adddata', component: AddCandidateDataComponent},
-  {path: 'candidatedata', component: CandidateDataTableComponent}
+  {path: 'candidatedata', component: CandidateDataTableComponent},
+  {path: 'interviewresponse', component: InterviewresponseComponent}
 ];
 
 @NgModule({
