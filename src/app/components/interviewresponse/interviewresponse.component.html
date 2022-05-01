@@ -1,1 +1,86 @@
-<p>interviewresponse works!</p>
+
+<div class="card-container">
+    <a class="card">
+       <span>{{name}}</span>
+    </a>
+
+    <a class="card">
+       <span>{{experience}} years</span>
+     </a>
+
+    <a class="card">
+       <span>{{currentCtC}}  LPA</span>
+     </a>
+
+    <a class="card">
+       <span>{{primarySkills}}</span>
+     </a>
+
+   
+
+  </div>
+
+  <div class="card-container rams-recruit-interview-marks">
+    <div class="candidate-avanced-div">
+
+      
+    <label id="example-radio-group-label">Candidate Advanced for Next Role: </label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"     
+      [(ngModel)]="result">
+      <mat-radio-button class="example-radio-button" *ngFor="let rep of response" [value]="rep">
+        {{rep}}
+      </mat-radio-button>
+    </mat-radio-group>
+</div>
+
+</div>
+<div>
+
+
+<!-- Technical Experience-->
+
+<div class="card-container candidate-avanced-div">
+    <div class="candidate-avanced-div">
+    <label id="example-radio-group-label">Does the Candidate has the relevant technical experience: </label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"     
+      [(ngModel)]="expRating">
+      <mat-radio-button class="example-radio-button" *ngFor="let rep1 of rating" [value]="rep1">
+        {{rep1}}
+      </mat-radio-button>
+    </mat-radio-group>
+</div>
+</div>
+
+<!-- Communication Exp-->
+
+<div class="card-container candidate-avanced-div">
+    <div class="candidate-avanced-div">
+    <label id="example-radio-group-label">Does the Candidate has the relevant Communication skills: </label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"     
+      [(ngModel)]="commRating">
+      <mat-radio-button class="example-radio-button" *ngFor="let rep2 of rating" [value]="rep2">
+        {{rep2}}
+      </mat-radio-button>
+    </mat-radio-group>
+</div>
+</div>
+
+
+
+<div class="card-container candidate-avanced-div">
+    <div class="candidate-avanced-div">
+    <label id="example-radio-group-label">Does the Candidate has the interest about our values/company: </label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"     
+      [(ngModel)]="interestRating">
+      <mat-radio-button class="example-radio-button" *ngFor="let rep3 of rating" [value]="rep3">
+        {{rep3}}
+      </mat-radio-button>
+    </mat-radio-group>
+</div>
+</div>
+    
+ 

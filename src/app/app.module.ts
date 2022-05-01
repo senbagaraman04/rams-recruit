@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CandidateDataTableComponent } from './components/candidate-data-table/candidate-data-table.component';
 import { CardsComponentComponent } from './components/cards-component/cards-component.component';
 import { InterviewresponseComponent } from './components/interviewresponse/interviewresponse.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { InterviewresponseComponent } from './components/interviewresponse/inter
     BrowserAnimationsModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatRadioModule,
     MatTableModule,FormsModule,MatFormFieldModule
   ],
   providers: [],
