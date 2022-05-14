@@ -27,18 +27,6 @@ export class InterviewresponseComponent implements OnInit {
 
 
   loadInterviewerForm() {
-    this.form = this.fb.group({
-      interviewerName: [null, [Validators.required, Validators.minLength(10)]],
-      email: [null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      doi: [null, [Validators.required]],
-      address: [null],
-      country: [null],
-      gender: [null],
-      // password: [null, [Validators.required, Validators.minLength(6)]],
-      // confirmPassword: [null, [Validators.required]],
-    });
-
-
     this.myGroup = new FormGroup({
       interviewerName: new FormControl(),
       doi: new FormControl(),
@@ -65,7 +53,6 @@ export class InterviewresponseComponent implements OnInit {
   interestRating;
   commRating;
   result;
-  form: FormGroup;
-  myGroup: FormGroup;
+   myGroup: FormGroup;
 
 }
