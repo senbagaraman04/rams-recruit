@@ -13,13 +13,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CandidateDataTableComponent } from './components/candidate-data-table/candidate-data-table.component';
 import { CardsComponentComponent } from './components/cards-component/cards-component.component';
+import { InterviewresponseComponent } from './components/interviewresponse/interviewresponse.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+ import { MatDatepickerModule } from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
     AddCandidateDataComponent,
     CandidateDataTableComponent,
-    CardsComponentComponent
+    CardsComponentComponent,
+    InterviewresponseComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,15 @@ import { CardsComponentComponent } from './components/cards-component/cards-comp
     BrowserAnimationsModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatTableModule,FormsModule,MatFormFieldModule
+    MatRadioModule,
+    MatTableModule,FormsModule,MatFormFieldModule,
+    MatSelectModule,
+        MatRadioModule,
+        MatButtonModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
