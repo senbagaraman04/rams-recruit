@@ -15,7 +15,11 @@ import { CandidateDataTableComponent } from './components/candidate-data-table/c
 import { CardsComponentComponent } from './components/cards-component/cards-component.component';
 import { InterviewresponseComponent } from './components/interviewresponse/interviewresponse.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+ import { MatDatepickerModule } from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,14 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatTableModule,FormsModule,MatFormFieldModule
+    MatTableModule,FormsModule,MatFormFieldModule,
+    MatSelectModule,
+        MatRadioModule,
+        MatButtonModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

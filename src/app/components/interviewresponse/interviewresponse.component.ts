@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-interviewresponse',
@@ -6,14 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./interviewresponse.component.scss']
 })
 export class InterviewresponseComponent implements OnInit {
-   response: string[] = ['Advanced', 'Not Moved'];
-   rating: number[] = [1,2,3,4,5];
-   expRating;
-   interestRating;
-   commRating;
-   result;
+  
+   
 
-  constructor() { 
+
+  constructor(private fb: FormBuilder) { 
    
   }
 
@@ -23,6 +21,37 @@ export class InterviewresponseComponent implements OnInit {
      this.experience = 4;
      this.currentCtC = "4.20";
      this.primarySkills = ["Azure Devops", "AWS", "Google Cloud", "Paytm Cloud"];
+
+     this.loadInterviewerForm();
+  }
+
+
+  loadInterviewerForm() {
+    this.form = this.fb.group({
+      interviewerName: [null, [Validators.required, Validators.minLength(10)]],
+      email: [null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      doi: [null, [Validators.required]],
+      address: [null],
+      country: [null],
+      gender: [null],
+      // password: [null, [Validators.required, Validators.minLength(6)]],
+      // confirmPassword: [null, [Validators.required]],
+    });
+
+
+    this.myGroup = new FormGroup({
+      interviewerName: new FormControl(),
+      doi: new FormControl(),
+      interviewQuestions: new FormControl(),
+      result: new FormControl(),
+      techExperience: new FormControl(),
+      verbalCommunication: new FormControl()
+  }); 
+  }
+
+  saveDetails(form) {
+    console.log(form);
+    console.log(this.myGroup.getRawValue());
   }
 
 
@@ -30,5 +59,13 @@ export class InterviewresponseComponent implements OnInit {
   experience: number;
   primarySkills: string[];
   currentCtC: string;
+  response: string[] = ['Advanced', 'Not Moved'];
+  rating: number[] = [1,2,3,4,5];
+  expRating;
+  interestRating;
+  commRating;
+  result;
+  form: FormGroup;
+  myGroup: FormGroup;
 
 }
