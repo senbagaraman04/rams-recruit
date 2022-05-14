@@ -7,6 +7,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CandidateDataService } from 'src/app/services/candidate-data.service';
 
 @Component({
   selector: 'app-add-candidate-data',
@@ -16,7 +17,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AddCandidateDataComponent implements OnInit {
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private candidateService: CandidateDataService) { }
 
   ngOnInit(): void {
     this.candidateForm = this.formBuilder.group({
@@ -36,6 +37,13 @@ export class AddCandidateDataComponent implements OnInit {
       return;
     }
     console.log(this.candidateForm.value);
+    this.candidateService.addCandidateData("addCandidateData", this.candidateForm.getRawValue()).subscribe(res=>{
+        this.candidateForm.reset();
+    }, error => {
+      alert("Something went wrong, when engineers went for coffee...\n Please try after sometime ");
+      console.log(error);
+    });
+    
   }
 
 

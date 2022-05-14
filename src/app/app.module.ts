@@ -20,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
  import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CandidateDataService } from './services/candidate-data.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     InterviewresponseComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     MatInputModule,
@@ -45,7 +48,7 @@ import { MatNativeDateModule } from '@angular/material/core';
         MatNativeDateModule,
         MatIconModule,
   ],
-  providers: [],
+  providers: [CandidateDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
