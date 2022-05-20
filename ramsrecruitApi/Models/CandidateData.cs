@@ -9,13 +9,13 @@ namespace ramsrecruitApi.Models
     {
         public string name { get; set; }
         public string email { get; set; }
-       public string phonenumber { get; set; }
+        public string phonenumber { get; set; }
 
         public string pskills { get; set; }
 
         public string experience { get; set; }
 
         public string rcompany { get; set; }
-public string currentctc { get; set; }
+        public string currentctc { get; set; }
     }
 }

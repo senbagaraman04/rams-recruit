@@ -1,16 +1,19 @@
-﻿using ramsrecruitApi.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ramsrecruitApi.Models;
 
-namespace ramsrecruitApi.Controllers
+namespace ramsrecruitapi.Controllers
 {
-    public class CandidateDataController : ApiController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CandidateDataController : ControllerBase
     {
         // GET: api/CandidateData
+        [HttpGet]
         public IEnumerable<CandidateData> Get()
         {
             var cd = new CandidateData();
@@ -41,24 +44,26 @@ namespace ramsrecruitApi.Controllers
         }
 
         // GET: api/CandidateData/5
+        [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/addCandidateData
-        public void Post([FromBody]string value)
+        // POST: api/CandidateData
+        [HttpPost]
+        public void Post([FromBody] string value)
         {
-             
-            Console.WriteLine("Raman");
         }
 
         // PUT: api/CandidateData/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/CandidateData/5
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
         }
