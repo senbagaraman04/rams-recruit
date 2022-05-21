@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using ramsrecruitAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using ramsrecruitApi.Models;
 
-namespace ramsrecruitapi.Controllers
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace ramsrecruitAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CandidateDataController : ControllerBase
     {
-        // GET: api/CandidateData
+         // GET: api/CandidateData
         [HttpGet]
         public IEnumerable<CandidateData> Get()
         {
@@ -43,26 +44,26 @@ namespace ramsrecruitapi.Controllers
             return candid;
         }
 
-        // GET: api/CandidateData/5
-        [HttpGet("{id}", Name = "Get")]
+        // GET api/<CandidateDataController>/5
+        [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/CandidateData
+        // POST api/<CandidateDataController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/CandidateData/5
+        // PUT api/<CandidateDataController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE api/<CandidateDataController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
