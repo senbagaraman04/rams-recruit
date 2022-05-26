@@ -1,5 +1,11 @@
+/**
+ * @author: github.com/senbagaraman04
+ * @copyright:  All rights reserved with the author
+ * @summary: 
+ */
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { CandidateDataService } from 'src/app/services/candidate-data.service';
 
 export interface PeriodicElement {
   name: string;
@@ -28,9 +34,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CandidateDataTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private candidateData: CandidateDataService) { }
 
   ngOnInit(): void {
+    this.candidateData.loadCandidateData().subscribe(resp => {
+     
+      const response = JSON.parse(JSON.stringify(resp));
+       
+      this.dataSource = new MatTableDataSource(response);
+    });
   }
 
 
@@ -40,7 +52,9 @@ export class CandidateDataTableComponent implements OnInit {
   }
 
   
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['name', 'email', 'phonenumber', 'pskills'];
+  dataSource = new MatTableDataSource();
 
 }
+
+ 

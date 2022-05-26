@@ -1,3 +1,9 @@
+/**
+ * @author: github.com/senbagaraman04
+ * @copyright:  All rights reserved with the author
+ * @summary: 
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
