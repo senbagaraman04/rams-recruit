@@ -15,15 +15,14 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
     
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      #installs Node Module to run the code
+    - name: Install dependencies
+      run: npm install
+    - name: TypeScript compiler
+      uses: iCrawl/action-tsc@v1
+      #Builds the angular application using node and in production mode
     - name: Build
-      run: |
-        npm install
-        ng build
+      run: npm run build -- --prod 
         
