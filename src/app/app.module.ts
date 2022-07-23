@@ -7,18 +7,22 @@ import { CardsComponentComponent } from './cards-component/cards-component.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import { AddcandidateformComponent } from './addcandidateform/addcandidateform.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponentComponent
+    CardsComponentComponent,
+    AddcandidateformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule, FormsModule, ReactiveFormsModule, MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
