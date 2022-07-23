@@ -16,7 +16,7 @@ export class CandidatelistComponent implements AfterViewInit {
   dataSource: CandidatelistDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['fullname','email', 'gender','phoneNumber', 'yoe', 'tech'];
 
   constructor() {
     this.dataSource = new CandidatelistDataSource();

@@ -4,34 +4,22 @@ import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
-// TODO: Replace this with your own data model type
 export interface CandidatelistItem {
-  name: string;
-  id: number;
+  fullname: string,
+  email:string,
+  phoneNumber: string,
+  yoe: string,
+  tech: string,
+  gender: string
 }
 
-// TODO: replace this with real data from your application
 const EXAMPLE_DATA: CandidatelistItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  {fullname: "candidate1", email:"candidate@test.com", phoneNumber:"9000000001", yoe:"1",gender:"male",tech:"Full Stack .net"  },
+  {fullname: "candidate2", email:"candidate2@test.com", phoneNumber:"9000000002", yoe:"2",gender:"Female",tech:"Full Stack .net"  },
+  {fullname: "candidate3", email:"candidate3@test.com", phoneNumber:"9000000003", yoe:"3",gender:"male",tech:"Testing"  },
+  {fullname: "candidate4", email:"candidate4@test.com", phoneNumber:"9000000004", yoe:"4",gender:"Female",tech:"Full Stack .net"  },
+  {fullname: "candidate5", email:"candidate5@test.com", phoneNumber:"9000000005", yoe:"5",gender:"male",tech:"Java"  },
+
 ];
 
 /**
@@ -97,8 +85,8 @@ export class CandidatelistDataSource extends DataSource<CandidatelistItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'fullname': return compare(a.fullname, b.fullname, isAsc);
+        case 'yoe': return compare(a.yoe, b.yoe, isAsc);
         default: return 0;
       }
     });
