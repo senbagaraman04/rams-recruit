@@ -14,20 +14,27 @@ import { CandidatelistComponent } from './candidatelist/candidatelist.component'
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { RamsrecruitdasboardComponent } from './ramsrecruitdasboard/ramsrecruitdasboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponentComponent,
     AddcandidateformComponent,
-    CandidatelistComponent
+    CandidatelistComponent,
+    RamsrecruitdasboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatDividerModule, FormsModule, ReactiveFormsModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule
+    MatDividerModule, FormsModule, ReactiveFormsModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, MatGridListModule, MatMenuModule, MatIconModule, MatButtonModule, LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
