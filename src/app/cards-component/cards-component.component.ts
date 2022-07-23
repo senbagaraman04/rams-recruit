@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponentComponent implements OnInit {
 
-  constructor() { }
+  date: Date = new Date();
+  profilesShortlisted: number = 0;
+  shortlistedInterview: number =0;
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
+
+    this.profilesShortlisted = 12;
+    this.shortlistedInterview = 11;
   }
 
 }
