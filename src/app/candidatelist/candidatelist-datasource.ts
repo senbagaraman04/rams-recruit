@@ -60,6 +60,15 @@ export class CandidatelistDataSource extends DataSource<CandidatelistItem> {
    */
   disconnect(): void {}
 
+/**
+ * Returns the number of candidate profiles received and added to the application.
+ * @returns number of candidate profiles received
+ */
+  getCandidateCount(): number {
+
+    return this.data.length;
+  }
+
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
