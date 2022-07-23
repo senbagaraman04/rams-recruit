@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponentComponent implements OnInit {
 
-  date: Date = new Date();
+  date = new Date().toLocaleDateString();
   profilesShortlisted: number = 0;
   shortlistedInterview: number =0;
   constructor() { 
