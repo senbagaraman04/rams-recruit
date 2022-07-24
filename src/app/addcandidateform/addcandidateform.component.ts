@@ -29,7 +29,8 @@ export class AddcandidateformComponent implements OnInit {
   }
 
   onClear() {
-    //TODO:
+    
+    this.myForm.reset()
   }
 
 }

@@ -11,14 +11,45 @@ export interface CandidatelistItem {
   yoe: string,
   tech: string,
   gender: string
+  l1Response?:string;
+  l2Response?:string;
+  l3Response?: string;
+  cleared?:boolean;
 }
 
 const EXAMPLE_DATA: CandidatelistItem[] = [
-  {fullname: "candidate1", email:"candidate@test.com", phoneNumber:"9000000001", yoe:"1",gender:"male",tech:"Full Stack .net"  },
-  {fullname: "candidate2", email:"candidate2@test.com", phoneNumber:"9000000002", yoe:"2",gender:"Female",tech:"Full Stack .net"  },
-  {fullname: "candidate3", email:"candidate3@test.com", phoneNumber:"9000000003", yoe:"3",gender:"male",tech:"Testing"  },
-  {fullname: "candidate4", email:"candidate4@test.com", phoneNumber:"9000000004", yoe:"4",gender:"Female",tech:"Full Stack .net"  },
-  {fullname: "candidate5", email:"candidate5@test.com", phoneNumber:"9000000005", yoe:"5",gender:"male",tech:"Java"  },
+  {
+    fullname: "candidate1",
+    email: "candidate@test.com",
+    phoneNumber: "9000000001",
+    yoe: "1", gender: "male",
+    tech: "Full Stack Java",
+    l1Response:"Taken by Mr.XSD. Candidate is good in Angular/Vue.js and Java",
+    l2Response:"Taken by Ms.JSD. Candidate is good in design principles",
+    l3Response:"Taken by Mr.OJK. Cleared. Start offer process",
+    cleared: true
+  },
+  {
+    fullname: "candidate2",
+    email: "candidate2@test.com",
+    phoneNumber: "9000000002",
+    yoe: "2",
+    gender: "Female",
+    tech: "Full Stack .net",
+    l1Response: "Taken by Mr.WWS. Candidate is good in Angular/React.js and net",
+  },
+  {
+    fullname: "candidate3",
+    email: "candidate3@test.com",
+    phoneNumber: "9000000003",
+    yoe: "3",
+    gender: "male",
+    l1Response: "Taken by Mr.2ws. Candidate is good in Angular/Vue.js and Java",
+    l2Response: "Taken by Ms.fde. Candidate is not good in design principles",
+    tech: "Testing"
+  },
+  { fullname: "candidate4", email: "candidate4@test.com", phoneNumber: "9000000004", yoe: "4", gender: "Female", tech: "Full Stack .net" },
+  { fullname: "candidate5", email: "candidate5@test.com", phoneNumber: "9000000005", yoe: "5", gender: "male", tech: "Java" },
 
 ];
 
