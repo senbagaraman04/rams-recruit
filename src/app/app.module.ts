@@ -10,7 +10,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { AddcandidateformComponent } from './addcandidateform/addcandidateform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { CandidatelistComponent, DialogContentExampleDialog } from './candidatelist/candidatelist.component';
+import { CandidatelistComponent, DialogContentDialog } from './candidatelist/candidatelist.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -33,7 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     CandidatelistComponent,
     RamsrecruitdasboardComponent,
     HomepageComponent,
-    DialogContentExampleDialog
+    DialogContentDialog
   ],
   imports: [
     BrowserModule,
