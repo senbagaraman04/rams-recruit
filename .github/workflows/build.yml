@@ -32,5 +32,6 @@ jobs:
         cd server
         ls
         npm install
-        npm run build
+        npm run 
+        node index.js
         
