@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CandidatelistDataSource, CandidatelistItem } from './candidatelist-datasource';
 import { MatDialog } from '@angular/material/dialog';
 import { LocaldatastorageService } from '../services/localdatastorage.service';
@@ -30,11 +30,12 @@ export class CandidatelistComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    //this.table.dataSource = this.dataSource;
 
 
     this.candidateService.getCandidateData().subscribe(res => {
       console.log(res);
+      this.table.dataSource = new MatTableDataSource(res.data);
     });
   }
 
