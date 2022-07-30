@@ -7,7 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CanidateDataServiceService {
-  public url = environment.URL;
+
+  public url = environment.URL + "/candidate";
+
   constructor(private http: HttpClient) { }
 
   /**
@@ -15,8 +17,19 @@ export class CanidateDataServiceService {
    * @param params 
    * @returns - array of candidate list
    */
-  getCandidateData(params: string):Observable<any>{
-    
-    return this.http.get(this.url+params);
+  getCandidateData(params: string): Observable<any> {
+
+    return this.http.get(this.url + params);
   }
+
+  /**
+   * Adds the data of student
+   * @param params 
+   * @returns 
+   */
+  addCandidateData(params: string, data: any): Observable<any> {
+    return this.http.post(this.url + params, data);
+  }
+
+
 }

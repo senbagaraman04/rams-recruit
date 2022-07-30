@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CanidateDataServiceService } from '../services/canidate-data-service.service';
 
 @Component({
   selector: 'app-addcandidateform',
@@ -8,9 +9,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class AddcandidateformComponent implements OnInit {
   myForm!: FormGroup;
-  
-  
-  constructor(private fb: FormBuilder) { }
+
+
+  constructor(private fb: FormBuilder, private candidateDataService: CanidateDataServiceService) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -22,14 +23,14 @@ export class AddcandidateformComponent implements OnInit {
       gender: ['', Validators.required]
     });
   }
-  
+
   onSubmit(): void {
-    
-    console.log(this.myForm.value);
+    this.candidateDataService.addCandidateData("/addCandidateData", this.myForm.value).subscribe(res => {
+      console.log(res);
+    });
   }
 
   onClear() {
-    
     this.myForm.reset()
   }
 
