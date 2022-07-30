@@ -27,7 +27,8 @@ jobs:
         npm install
         npm run build
         
-    - name: Printing the path
+    - name: Build Backend
       run: |
-        pwd
+        cd server
+        npm run build
         
