@@ -2,9 +2,9 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "senbagaraman04-patch-1" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "senbagaraman04-patch-1" ]
 
 jobs:
   build:
@@ -27,4 +27,7 @@ jobs:
         npm install
         npm run build
         
+    - name: Printing the path
+      run: |
+        pwd
         
