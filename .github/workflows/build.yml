@@ -30,5 +30,7 @@ jobs:
     - name: Build Backend
       run: |
         cd server
+        ls
+        npm install
         npm run build
         
