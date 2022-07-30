@@ -23,7 +23,11 @@ export class CandidatelistComponent implements AfterViewInit {
   displayedColumns = ['fullname', 'email', 'gender', 'phoneNumber', 'yoe', 'tech', 'interviewResponses'];
 
 
-  constructor(public dialog: MatDialog, private rowDataService: LocaldatastorageService, private candidateService: CanidateDataServiceService) {
+  constructor(
+    public dialog: MatDialog,
+    private rowDataService: LocaldatastorageService,
+    private candidateService: CanidateDataServiceService) 
+  {
     this.dataSource = new CandidatelistDataSource();
   }
 
@@ -33,7 +37,7 @@ export class CandidatelistComponent implements AfterViewInit {
     //this.table.dataSource = this.dataSource;
 
 
-    this.candidateService.getCandidateData().subscribe(res => {
+    this.candidateService.getCandidateData("/candidateList").subscribe(res => {
       console.log(res);
       this.table.dataSource = new MatTableDataSource(res.data);
     });
