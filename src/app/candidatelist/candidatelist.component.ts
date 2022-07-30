@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LocaldatastorageService } from '../services/localdatastorage.service';
 import { Observable, Subscribable, take } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CanidateDataServiceService } from '../services/canidate-data-service.service';
 @Component({
   selector: 'app-candidatelist',
   templateUrl: './candidatelist.component.html',
@@ -22,7 +23,7 @@ export class CandidatelistComponent implements AfterViewInit {
   displayedColumns = ['fullname', 'email', 'gender', 'phoneNumber', 'yoe', 'tech', 'interviewResponses'];
 
 
-  constructor(public dialog: MatDialog, private rowDataService: LocaldatastorageService) {
+  constructor(public dialog: MatDialog, private rowDataService: LocaldatastorageService, private candidateService: CanidateDataServiceService) {
     this.dataSource = new CandidatelistDataSource();
   }
 
@@ -30,6 +31,11 @@ export class CandidatelistComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+
+
+    this.candidateService.getCandidateData().subscribe(res => {
+      console.log(res);
+    });
   }
 
   /**
@@ -59,12 +65,16 @@ export class DialogContentDialog implements OnInit {
   constructor(private rowDataService: LocaldatastorageService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
     this.createTable();
     this.rowDataService.selectedRowData.pipe(take(1)).subscribe(response => {
       console.log(response);
       this.candidateData = response;
       this.populateTableData()
     });
+
+
+
   }
 
   onCancelClick() {
@@ -78,6 +88,7 @@ export class DialogContentDialog implements OnInit {
 
 
   private createTable() {
+
     this.myForm = new FormGroup({
       first: new FormControl({ value: '', disabled: true }, Validators.required),
       l1Response: new FormControl({ value: '', disabled: false }, Validators.required),
@@ -110,3 +121,4 @@ export class DialogContentDialog implements OnInit {
   }
 
 }
+

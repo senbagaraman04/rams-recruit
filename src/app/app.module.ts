@@ -25,6 +25,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
  @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule, 
     MatSidenavModule, 
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
