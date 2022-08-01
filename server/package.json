@@ -4,6 +4,7 @@
   "description": "Backend for rams recruit. Based on Node.js",
   "main": "index.js",
   "scripts": {
+    "build": "node index.js",
     "start-server": "node index.js && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
