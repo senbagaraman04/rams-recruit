@@ -3,13 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build":"ng build --prod --aot",
+    "build": "ng build --prod --aot",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ng build --configuration production --aot"    
+    "postinstall": "ng build --configuration production --aot",
+    "start": "node server.js",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
+  "engines": {
+    "node": "14.15.3",
+    "npm": "6.14.9"
+  },
   "dependencies": {
     "@angular/animations": "^14.0.0",
     "@angular/cdk": "^14.0.5",
@@ -22,10 +27,23 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "bootstrap": "^5.2.0",
+    "express": "^4.18.1",
     "jquery": "^3.6.0",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@angular-devkit/build-angular": "^14.0.6",
+    "@angular/cli": "~14.0.6",
+    "@angular/compiler-cli": "^14.0.0",
+    "@types/jasmine": "~4.0.0",
+    "jasmine-core": "~4.1.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.7.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.6",
