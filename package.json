@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build":"ng build",
+    "build:github":"ng build",
     "local:start":"ng serve && cd ./server && npm run start-server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
