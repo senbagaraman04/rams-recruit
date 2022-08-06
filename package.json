@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --configuration production --aot",
-    "start": "node server.js",
-    "heroku-postbuild": "ng build --prod"
+    "start": "node server.js"
   },
   "private": true,
   "engines": {
