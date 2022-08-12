@@ -1,14 +1,16 @@
 {
   "name": "rams-recruitment",
-  "version": "0.0.0",
+  "version": "0.0.1-beta",
   "scripts": {
     "ng": "ng",
-    "build:github":"ng build",
     "build":"ng build",
+    "build:github":"ng build",
+    "local:start":"ng serve && cd ./server && npm run start-server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --configuration production --aot",
-    "start": "node server.js"
+    "start": "node server.js && cd ./server && npm run start-server",
+    "startserver":"cd ./server && npm run start-server"
   },
   "private": true,
   "engines": {
