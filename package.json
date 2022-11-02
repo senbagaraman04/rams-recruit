@@ -1,6 +1,10 @@
 {
   "name": "rams-recruitment",
   "version": "0.0.1-beta",
+  "description" : "A recruit management system which can be used locally by the interviewer.",
+  "homepage" : "https://github.com/senbagaraman04/rams-recruit",
+  "keywords" : ["Angular", "recruitment", "browserapp","recruitment-platform"],
+  "author" : "Senbagaraman  <senbagaraman04@gmail.com>",
   "scripts": {
     "ng": "ng",
     "build":"ng build",
