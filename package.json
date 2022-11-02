@@ -6,6 +6,7 @@
   "keywords" : ["Angular", "recruitment", "browserapp","recruitment-platform"],
   "author" : "Senbagaraman  <senbagaraman04@gmail.com>",
   "scripts": {
+    "setup:local": "npm install && cd ./server && npm install",
     "ng": "ng",
     "build":"ng build",
     "build:github":"ng build",

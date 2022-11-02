@@ -1,3 +1,7 @@
+/**
+ * https://github.com/senbagaraman04/rams-recruit
+ */
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -26,6 +30,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { OfferDetailsComponent } from './offer-details/offer-details.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     CandidatelistComponent,
     RamsrecruitdasboardComponent,
     HomepageComponent,
-    DialogContentDialog
+    DialogContentDialog,
+    OfferDetailsComponent
   ],
   imports: [
     BrowserModule,

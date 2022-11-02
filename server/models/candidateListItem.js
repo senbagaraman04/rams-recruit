@@ -1,5 +1,6 @@
 /**
  * https://github.com/senbagaraman04/rams-recruit
+ * All rights reserved 
  */
 
 const mongoose = require('mongoose');

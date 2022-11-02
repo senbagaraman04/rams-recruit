@@ -4,7 +4,7 @@
 
 const express = require('express');
 const app = express();
-
+//const arrayList = [];
 const candidateListRoutes = express.Router();
 
 // Require Business model in our routes module
@@ -26,6 +26,7 @@ candidateListRoutes.route("/addCandidateData").post(function (req, res) {
 
     let candidateData = new candidateListItem(req.body);
     console.log(candidateData);
+  //  arrayList.push(candidateData)
     res.status(200).json({'candidateData': 'Candidate data in added successfully'});
 });
 
