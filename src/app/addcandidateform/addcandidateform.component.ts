@@ -13,6 +13,7 @@ import { CanidateDataServiceService } from '../services/canidate-data-service.se
 })
 export class AddcandidateformComponent implements OnInit {
   myForm!: FormGroup;
+  showForm: boolean = true;
 
 
   constructor(private fb: FormBuilder, private candidateDataService: CanidateDataServiceService) { }
@@ -26,12 +27,19 @@ export class AddcandidateformComponent implements OnInit {
       tech: ["", Validators.required],
       gender: ['', Validators.required]
     });
+
+    this.showForm = true;
   }
 
+
+  //TODO:
   onSubmit(): void {
-    this.candidateDataService.addCandidateData("/addCandidateData", this.myForm.value).subscribe(res => {
-      console.log(res);
-    });
+    console.log(this.myForm);
+    this.showForm = false;
+  }
+
+  onBackBtn(): void {
+    this.showForm = true;
   }
 
   onClear() {

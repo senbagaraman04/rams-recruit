@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;">
+<form  *ngIf="showForm" [formGroup]="myForm" data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;">
   <div class="form-group">
     <label class="control-label">Full Name</label>
     <input formControlName="fullName" type="text" class="form-control" id="fullName" placeholder="Full Name">
@@ -36,11 +36,34 @@
   </div>
 
   <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
-
-    <button mat-raised-button class="btn btn-outline-primary mr-5" (click)="onSubmit()">Submit</button>
-
-    <button mat-raised-button class="btn btn-outline-primary" (click)="onClear()">Clear</button>
-
-  </div>
+    <div class="btn-group" role="group">
+      <button  mat-raised-button color="primary"  class="btn btn-outline-primary mr-5" (click)="onSubmit()">Submit</button>&nbsp;
+    </div>
+    <div class="btn-group" role="group">
+      <button mat-raised-button class="btn btn-outline-primary" (click)="onClear()">Clear</button>
+    </div>
+</div>
 
 </form>
+
+
+
+<div class="ramsrecruit-onsuccesscandidate" *ngIf="!showForm">
+  <span>
+      The candidate has been added successfully.
+  </span>
+
+  <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
+    <div class="btn-group" role="group">
+      <button  mat-raised-button color="primary"  class="btn btn-outline-primary mr-5" (click)="onBackBtn()"> 
+        <mat-icon>  arrow_circle_left  </mat-icon> Back </button> &nbsp;
+    </div>
+     
+</div>
+
+</div>
+
+
+
+
+
