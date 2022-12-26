@@ -14,7 +14,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { AddcandidateformComponent } from './addcandidateform/addcandidateform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { CandidatelistComponent, DialogContentDialog } from './candidatelist/candidatelist.component';
+import { CandidatelistComponent } from './candidatelist/candidatelist.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -40,7 +40,6 @@ import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.comp
     CandidatelistComponent,
     RamsrecruitdasboardComponent,
     HomepageComponent,
-    DialogContentDialog,
     OfferDetailsComponent,
     DasboardwrapperComponent
   ],
