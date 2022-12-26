@@ -1,15 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Ramsrecruit</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#" class="ramsrecruit-sidenav-link-home" routerLink="" routerLinkActive="active">Home</a>
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="dashboard" routerLinkActive="active">New Candidate</a>
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="candidateList" routerLinkActive="active">Candidate List</a>
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="interviewresponse" routerLinkActive="active" >Interview Response</a>
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="releasedoffers" routerLinkActive="active" > Offer Details</a>
+      <!-- <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="dashboard" routerLinkActive="active">New
+        Candidate</a>
+      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="candidateList"
+        routerLinkActive="active">Candidate List</a>
+      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="interviewresponse"
+        routerLinkActive="active">Interview Response</a>
+      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="releasedoffers" routerLinkActive="active">
+        Offer Details</a> -->
     </mat-nav-list>
     <mat-card class="sidepanel-card ramsrecruit-sidepanel-aboutus">
       <mat-card-header>
@@ -19,32 +21,31 @@
       </mat-card-header>
       <mat-card-content>
         <p>
-         Some of the links may not work or will redirect to underconstruction page.
-         Contact: <a href="https://github.com/senbagaraman04" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a><br>
-         <span class="text-muted">Version 0.0.1-beta</span>
+          Some of the links may not work or will redirect to underconstruction page.
+          Contact: <a href="https://github.com/senbagaraman04" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-github"></i></a><br>
+          <span class="text-muted">Version 0.0.1-beta</span>
         </p>
       </mat-card-content>
-    
+
     </mat-card>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Rams-recruitment</span>
     </mat-toolbar>
-    <div class="pt-3 mt-3">
-     
-      <app-cards-component></app-cards-component>
+    <div class="rlt-2">
+
+      <!-- <app-cards-component></app-cards-component> -->
+
+      <!-- <app-ramsrecruitdasboard></app-ramsrecruitdasboard> -->
       <router-outlet></router-outlet>
     </div>
-  
-  
+
+
   </mat-sidenav-content>
 </mat-sidenav-container>

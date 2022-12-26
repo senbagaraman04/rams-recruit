@@ -2,7 +2,7 @@
  * https://github.com/senbagaraman04/rams-recruit
  */
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
@@ -11,7 +11,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   templateUrl: './ramsrecruitdasboard.component.html',
   styleUrls: ['./ramsrecruitdasboard.component.scss']
 })
-export class RamsrecruitdasboardComponent {
+export class RamsrecruitdasboardComponent implements OnInit {
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -33,5 +33,19 @@ export class RamsrecruitdasboardComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) {
+
+  }
+
+
+  ngOnInit(): void {
+     this.populateCards();
+  }
+  populateCards() {
+     
+  }
+
+
 }
+ 
+
