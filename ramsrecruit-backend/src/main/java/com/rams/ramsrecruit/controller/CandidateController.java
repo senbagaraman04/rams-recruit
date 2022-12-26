@@ -3,6 +3,7 @@ package com.rams.ramsrecruit.controller;
 import com.rams.ramsrecruit.models.Candidate;
 import com.rams.ramsrecruit.repository.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ import java.util.List;
 public class CandidateController {
 
 
-    @GetMapping("/allcandidates")
+    @GetMapping("/getallcandidates")
     public List<Candidate> getAllCandidates() {
 
         Candidate cde = new Candidate();
@@ -49,5 +50,16 @@ public class CandidateController {
         candidateList.add(cde);
         candidateList.add(cde2);
         return candidateList;
+    }
+
+
+    @PostMapping("/addCandidates")
+    public ResponseEntity<Candidate> addCandidate(@RequestBody Candidate candidateData) throws Exception {
+
+        if (candidateData == null) {
+            throw new Exception();
+        } else {
+            return new ResponseEntity<>(candidateData, HttpStatus.CREATED);
+        }
     }
 }

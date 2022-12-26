@@ -23,7 +23,16 @@ export class CanidateDataServiceService {
    * @returns candidatelist
    */
   getAllCandidates(): Observable<any>{
-    return this.http.get(this.url+"/allcandidates");
+    return this.http.get(this.url+"/getallcandidates");
+  }
+
+/**
+ * Adds the candidate data to the backend.
+ * @param candidateData Data to be added
+ * @returns 
+ */
+  addCandidateData(candidateData: any) {
+    return this.http.post(this.url+"/addCandidates", candidateData);
   }
 
   

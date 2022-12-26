@@ -35,6 +35,9 @@ export class AddcandidateformComponent implements OnInit {
   //TODO:
   onSubmit(): void {
     console.log(this.myForm);
+     this.candidateDataService.addCandidateData(this.myForm.value).subscribe(res=>{
+
+     });
     this.showForm = false;
   }
 
