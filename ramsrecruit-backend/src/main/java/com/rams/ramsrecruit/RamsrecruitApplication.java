@@ -1,4 +1,4 @@
-package com.example.ramsrecruit;
+package com.rams.ramsrecruit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

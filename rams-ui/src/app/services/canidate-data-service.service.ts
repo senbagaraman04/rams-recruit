@@ -6,33 +6,27 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+/**
+ * Service for all candidate related operations
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class CanidateDataServiceService {
 
-  public url = environment.URL + "/candidate";
+  private url = environment.URL;
 
   constructor(private http: HttpClient) { }
 
   /**
-   * Returns the candidate list for the table
-   * @param params 
-   * @returns - array of candidate list
+   * returns the list of all candidates
+   * @returns candidatelist
    */
-  getCandidateData(params: string): Observable<any> {
-
-    return this.http.get(this.url + params);
+  getAllCandidates(): Observable<any>{
+    return this.http.get(this.url+"/allcandidates");
   }
 
-  /**
-   * Adds the data of student
-   * @param params 
-   * @returns 
-   */
-  addCandidateData(params: string, data: any): Observable<any> {
-    return this.http.post(this.url + params, data);
-  }
+  
 
 
 }
