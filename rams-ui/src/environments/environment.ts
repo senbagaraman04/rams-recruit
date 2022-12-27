@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL:"http://localhost:8082/ramsapi"
+  URL:"http://localhost:8081/ramsapi"
 };
 
 /*
