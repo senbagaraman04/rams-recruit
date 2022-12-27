@@ -1,3 +1,7 @@
+/**
+ * https://github.com/senbagaraman04/rams-recruit
+ */
+
 package com.rams.ramsrecruit.repository;
 
 import com.rams.ramsrecruit.entity.Candidate;

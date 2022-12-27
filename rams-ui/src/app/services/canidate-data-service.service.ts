@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Candidate } from '../shared/Candidate';
 
 /**
  * Service for all candidate related operations
@@ -31,8 +32,8 @@ export class CanidateDataServiceService {
  * @param candidateData Data to be added
  * @returns 
  */
-  addCandidateData(candidateData: any) {
-    return this.http.post(this.url+"/addCandidates", candidateData);
+  addCandidateData(candidateData: Candidate) {
+    return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData));
   }
 
   

@@ -20,11 +20,11 @@ export class AddcandidateformComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      fullName: ["", Validators.required],
+      name: ["", Validators.required],
       email: ["", Validators.required],
       phoneNumber: ["", Validators.required],
-      yoe: ["", Validators.required],
-      tech: ["", Validators.required],
+      experience: ["", Validators.required],
+      techStack: ["", Validators.required],
       gender: ['', Validators.required]
     });
 
@@ -36,6 +36,7 @@ export class AddcandidateformComponent implements OnInit {
   onSubmit(): void {
     console.log(this.myForm);
      this.candidateDataService.addCandidateData(this.myForm.value).subscribe(res=>{
+      console.log(res);
 
      });
     this.showForm = false;

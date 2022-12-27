@@ -1,7 +1,7 @@
 <form  *ngIf="showForm" [formGroup]="myForm" data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;">
   <div class="form-group">
     <label class="control-label">Full Name</label>
-    <input formControlName="fullName" type="text" class="form-control" id="fullName" placeholder="Full Name">
+    <input formControlName="name" type="text" class="form-control" id="name" placeholder="Full Name">
   </div>
 
   <div class="form-group">
@@ -27,12 +27,12 @@
 
   <div class="form-group">
     <label class="control-label">Experience(years)</label>
-    <input formControlName="yoe" type="text" class="form-control" id="yoe" placeholder="Experience in Years">
+    <input formControlName="experience" type="text" class="form-control" id="experience" placeholder="Experience in Years">
   </div>
 
   <div class="form-group">
     <label class="control-label">Technology(Comma seperated Values)</label>
-    <input formControlName="tech" type="text" class="form-control" id="yoe" placeholder="Ex: .net, angular">
+    <input formControlName="techStack" type="text" class="form-control" id="techStack" placeholder="Ex: .net, angular">
   </div>
 
   <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
