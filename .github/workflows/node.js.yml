@@ -55,9 +55,11 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
           java-version: '17'
           java-package: jdk
+
       
