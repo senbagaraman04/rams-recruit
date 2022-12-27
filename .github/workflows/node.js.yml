@@ -3,9 +3,9 @@ name: Build ramsrecruit
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "feat/*" , "fix/*" ]
   pull_request:
-    branches: [ "main" ]
+     branches: [ "main", "feat/*" , "fix/*" ]
 
 jobs:
   build:
@@ -28,3 +28,51 @@ jobs:
         cd rams-ui
         npm install
         npm run build:github
+   
+  compile:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        java: [ 17 ]
+    name: Java ${{ matrix.java }} compile
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-package: jdk
+          java-version: ${{ matrix.java }}
+      - name: Compile the Project
+        working-directory: github-actions-java-maven
+        run: |
+          cd ramsrecruit-backend
+          mvn -B compile
+
+  build:
+    runs-on: ubuntu-20.04
+    needs: compile
+    name: Build the Maven Project
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+          java-package: jdk
+      - name: Build and test project
+        working-directory: github-actions-java-maven
+        run: mvn -B verify
+      - name: Upload Maven build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact.jar
+          path: github-actions-java-maven/target/github-actions-java-maven.jar
