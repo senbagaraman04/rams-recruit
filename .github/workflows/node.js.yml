@@ -49,14 +49,9 @@ jobs:
         run: |
           cd ramsrecruit-backend
           mvn -B compile
-
-  build:
-    runs-on: ubuntu-20.04
-    needs: compile
-    name: Build the Maven Project
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - name: Build the Maven Project
+        uses: actions/checkout@v2
+        uses: actions/cache@v2
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -76,3 +71,4 @@ jobs:
         with:
           name: artifact.jar
           path: github-actions-java-maven/target/github-actions-java-maven.jar
+      
