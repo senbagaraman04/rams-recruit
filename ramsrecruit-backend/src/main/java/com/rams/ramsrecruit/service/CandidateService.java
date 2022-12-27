@@ -16,8 +16,8 @@ public class CandidateService {
      * Returns all the candidate data stored in the database
      * @returns Candidate Data in list format
      */
-    public List<Candidate> getAllCandidates() {
-        return null;//candidateRepository.getAll();
+    public Iterable<Candidate> getAllCandidates() {
+        return candidateRepository.findAll();
     }
 
     public long getAllCandidatesCount() {

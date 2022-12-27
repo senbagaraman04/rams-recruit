@@ -3,6 +3,8 @@ package com.rams.ramsrecruit.controller;
 import com.rams.ramsrecruit.entity.Candidate;
 import com.rams.ramsrecruit.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +20,16 @@ public class CandidateController {
     private CandidateService candidateService;
 
     @GetMapping("/getallcandidates")
-    public List<Candidate> getAllCandidates() {
-        return candidateService.getAllCandidates();
+    public Iterable<Candidate> getAllCandidates() {
+        System.out.print(candidateService.getAllCandidates());
+        return null;
+    }
+
+    @RequestMapping( "/getallcandidates2" )
+    public ResponseEntity<String> getStockItem() {
+        System.out.print("*******");
+        System.out.print(candidateService.getAllCandidates());
+        return new ResponseEntity<String>("It's working...!", HttpStatus.OK);
     }
 
 
