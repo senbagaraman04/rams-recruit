@@ -19,17 +19,9 @@ public class CandidateController {
     @Autowired
     private CandidateService candidateService;
 
-    @GetMapping("/getallcandidates")
-    public Iterable<Candidate> getAllCandidates() {
-        System.out.print(candidateService.getAllCandidates());
-        return null;
-    }
-
-    @RequestMapping( "/getallcandidates2" )
+    @RequestMapping( "/getallcandidates" )
     public ResponseEntity<String> getStockItem() {
-        System.out.print("*******");
-        System.out.print(candidateService.getAllCandidates());
-        return new ResponseEntity<String>("It's working...!", HttpStatus.OK);
+        return new ResponseEntity<String>(candidateService.getAllCandidates().toString(), HttpStatus.OK);
     }
 
 
