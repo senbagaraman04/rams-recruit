@@ -1,13 +1,13 @@
-package org.rfms;
+package com.rams.ramsrecruit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = "org.rfms.*")
-public class SpringBootAngularApp {
+@SpringBootApplication
+public class RamsrecruitApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(SpringBootAngularApp.class, args);
+		SpringApplication.run(RamsrecruitApplication.class, args);
 	}
+
 }
