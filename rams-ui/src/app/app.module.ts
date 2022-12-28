@@ -32,6 +32,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
+import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
+import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,9 @@ import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.comp
     RamsrecruitdasboardComponent,
     HomepageComponent,
     OfferDetailsComponent,
-    DasboardwrapperComponent
+    DasboardwrapperComponent,
+    InterviewerdataComponent,
+    InterviewerListComponent
   ],
   imports: [
     BrowserModule,
