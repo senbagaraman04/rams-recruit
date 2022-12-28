@@ -17,7 +17,8 @@ const routes: Routes = [
       { path: 'candidateList', component: CandidatelistComponent },
       { path: 'releasedoffers', component: OfferDetailsComponent },
       { path: 'interviewer', component: InterviewerdataComponent},
-      { path: 'interviewerList', component: InterviewerListComponent}
+      { path: 'interviewerList', component: InterviewerListComponent},
+      
 
     ]
   },

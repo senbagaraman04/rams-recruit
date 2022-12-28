@@ -43,6 +43,7 @@ export class AddcandidateformComponent implements OnInit {
   }
 
   onBackBtn(): void {
+    this.myForm.reset();
     this.showForm = true;
   }
 

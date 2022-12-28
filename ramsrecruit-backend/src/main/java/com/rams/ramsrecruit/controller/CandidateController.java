@@ -39,6 +39,7 @@ public class CandidateController {
     public ResponseEntity<String> addCandidate(@RequestBody Candidate cd){
         if(cd != null){
             candidateService.addCandidate(cd);
+
             return new ResponseEntity<String>("Candidate Added Successfully", HttpStatus.OK);
         }else{
             return new ResponseEntity<String>("Candidate Not Added", HttpStatus.NOT_MODIFIED);
