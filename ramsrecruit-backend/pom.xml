@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.rams</groupId>
 	<artifactId>ramsrecruit</artifactId>
-	<version>0.0.2-Beta</version>
+	<version>0.0.3</version>
 	<name>ramsrecruit</name>
 	<description>Maven application for RamsRecruitment</description>
 	<properties>
