@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '', component: HomepageComponent,
     children: [
-      { path: '', component: DasboardwrapperComponent },
+      { path: 'home', component: DasboardwrapperComponent },
       { path: 'addCandidate', component: AddcandidateformComponent },
       { path: 'candidateList', component: CandidatelistComponent },
       { path: 'releasedoffers', component: OfferDetailsComponent }

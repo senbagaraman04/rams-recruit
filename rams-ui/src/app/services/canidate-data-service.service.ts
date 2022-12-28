@@ -33,6 +33,7 @@ export class CanidateDataServiceService {
  * @returns 
  */
   addCandidateData(candidateData: Candidate) {
+    
     return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData));
   }
 

@@ -22,20 +22,13 @@ public class CandidateService {
    @Autowired
     private CandidateRepository2 candidateRepository2;
 
-   private EntityManager myEntityManager;
+
 
     /**
      * Returns all the candidate data stored in the database
-     * @returns Candidate Data in list format
+     * @returns Candidate Data in array format
      */
-    public Iterable<Candidate> getAllCandidates() {
-        return candidateRepository.findAll();
-    }
-
-    public Candidate[] getAll(){
-
-        //TODO: Static Response as the response is not coming
-
+     public Candidate[] getAll(){
         return candidateRepository.getall2();
     }
 
@@ -43,7 +36,7 @@ public class CandidateService {
         return candidateRepository.count();
     }
 
-    public void addCandidate(Candidate cd) {
-        candidateRepository.save(cd);
+    public Candidate addCandidate(Candidate cd) {
+        return candidateRepository.save(cd);
     }
 }
