@@ -7,15 +7,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 
 const routes: Routes = [
-  {path: '', component: HomepageComponent,
-  children: [
-    {path: '', component: DasboardwrapperComponent},
-     { path: 'dashboard', component: AddcandidateformComponent},
-     {path: 'candidateList', component: CandidatelistComponent},
-     {path:'releasedoffers', component: OfferDetailsComponent}
-  ]
-},
-  
+  {
+    path: '', component: HomepageComponent,
+    children: [
+      { path: '', component: DasboardwrapperComponent },
+      { path: 'addCandidate', component: AddcandidateformComponent },
+      { path: 'candidateList', component: CandidatelistComponent },
+      { path: 'releasedoffers', component: OfferDetailsComponent }
+    ]
+  },
+
 ];
 
 @NgModule({

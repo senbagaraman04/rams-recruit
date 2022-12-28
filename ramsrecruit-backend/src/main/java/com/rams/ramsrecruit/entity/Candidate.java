@@ -4,19 +4,22 @@
 
 package com.rams.ramsrecruit.entity;
 
+
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+
+import java.io.Serializable;
+
+@Data
 @Entity
 @Table(name="candidate")
-@Getter
-@Setter
-public class Candidate {
+public class Candidate implements Serializable {
 
     private static final long serialVersionUID = 1681261135191719508L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name="id")
     private int id;
     @Column(name="name")
     String name;

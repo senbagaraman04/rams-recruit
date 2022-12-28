@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CandidatelistItem } from './candidatelist-datasource';
 import { LocaldatastorageService } from '../services/localdatastorage.service';
 import { CanidateDataServiceService } from '../services/canidate-data-service.service';
+import { Candidate } from '../shared/Candidate';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<CandidatelistItem>;
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<Candidate>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['name', 'email', 'gender', 'phoneNumber', 'experience', 'tech'];
@@ -41,10 +42,12 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     this.candidateService.getAllCandidates().subscribe(response => {
+      console.log(response);
+      
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
-      console.log(response)
+      
     });
   }
 

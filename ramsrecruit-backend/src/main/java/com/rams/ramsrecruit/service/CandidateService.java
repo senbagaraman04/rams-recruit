@@ -6,6 +6,9 @@ package com.rams.ramsrecruit.service;
 import com.rams.ramsrecruit.entity.Candidate;
 import com.rams.ramsrecruit.repository.CandidateRepository;
 import com.rams.ramsrecruit.repository.CandidateRepository2;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.websocket.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +22,8 @@ public class CandidateService {
    @Autowired
     private CandidateRepository2 candidateRepository2;
 
+   private EntityManager myEntityManager;
+
     /**
      * Returns all the candidate data stored in the database
      * @returns Candidate Data in list format
@@ -27,17 +32,11 @@ public class CandidateService {
         return candidateRepository.findAll();
     }
 
-    public List<Candidate> getAll(){
-        System.out.println("From Service");
-        List<Candidate> rows = candidateRepository2.getall2();
-        System.out.println(rows);
-        System.out.println(rows.get(0));
+    public Candidate[] getAll(){
 
-        System.out.println("From Service3");
-        List row2s = candidateRepository2.getall2();
-        System.out.println(row2s);
-        System.out.println(row2s.get(0));
-        return rows;
+        //TODO: Static Response as the response is not coming
+
+        return candidateRepository.getall2();
     }
 
     public long getAllCandidatesCount() {

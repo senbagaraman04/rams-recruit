@@ -3,6 +3,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dasboardwrapper',
@@ -11,16 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DasboardwrapperComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   onAddCandidate() {
-
+    this.router.navigate(['/addCandidate']);
   }
 
   onDashboardClick() {
-    
+    this.router.navigate(['/candidateList']);
   }
 
 }

@@ -18,5 +18,8 @@ public interface CandidateRepository extends CrudRepository<Candidate, Integer> 
 
    // @Query(value="SELECT COUNT(*) FROM candidate")
     //int getAllCount();
+
+    @Query(value = "Select * from candidate c", nativeQuery = true)
+    Candidate[] getall2();
 }
 

@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface CandidateRepository2 extends JpaRepository<Candidate, Integer> {
 
-    @Query(value = "Select * from Candidate", nativeQuery = true)
+    @Query(value = "Select s from Candidate s", nativeQuery = true)
     Collection<Candidate> getall();
 
-    @Query(value = "Select * from Candidate", nativeQuery = true)
-    List getall2();
+    @Query(value = "Select c from Candidate c", nativeQuery = false)
+    List<Candidate[]> getall2();
 }
