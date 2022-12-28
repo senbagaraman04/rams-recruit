@@ -1,7 +1,7 @@
 /**
  * https://github.com/senbagaraman04/rams-recruit
  */
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -30,11 +30,11 @@ export class CanidateDataServiceService {
 /**
  * Adds the candidate data to the backend.
  * @param candidateData Data to be added
- * @returns 
  */
   addCandidateData(candidateData: Candidate) {
-    
-    return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData));
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+
+    return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
   }
 
   

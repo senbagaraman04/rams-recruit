@@ -9,7 +9,7 @@ export interface Candidate {
 
     experience: string;
 
-    techStack: string[];
+    techStack: string;
 
     gender: string;
 

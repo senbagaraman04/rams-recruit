@@ -35,7 +35,7 @@ public class CandidateController {
         return new ResponseEntity<Long>(Long.valueOf(String.valueOf(candidateService.getAllCandidatesCount())), HttpStatus.OK);
     }
 
-    @PostMapping("/addCandidates")
+    @PostMapping(value="/addCandidates", consumes = {"application/json;charset=UTF-8"}, produces={"application/json;charset=UTF-8"})
     public ResponseEntity<String> addCandidate(@RequestBody Candidate cd){
         if(cd != null){
             candidateService.addCandidate(cd);

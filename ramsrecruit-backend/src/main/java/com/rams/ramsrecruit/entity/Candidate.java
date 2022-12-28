@@ -26,7 +26,7 @@ public class Candidate implements Serializable {
     @Column(name="experience")
     String experience;
     @Column(name="techStack")
-    String[] techStack;
+    String techStack;
     @Column(name="email")
     String  email;
     @Column(name="phoneNumber")
