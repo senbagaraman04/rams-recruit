@@ -4,6 +4,8 @@ import { AddcandidateformComponent } from './addcandidateform/addcandidateform.c
 import { CandidatelistComponent } from './candidatelist/candidatelist.component';
 import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
+import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 
 const routes: Routes = [
@@ -13,7 +15,11 @@ const routes: Routes = [
       { path: 'home', component: DasboardwrapperComponent },
       { path: 'addCandidate', component: AddcandidateformComponent },
       { path: 'candidateList', component: CandidatelistComponent },
-      { path: 'releasedoffers', component: OfferDetailsComponent }
+      { path: 'releasedoffers', component: OfferDetailsComponent },
+      { path: 'interviewer', component: InterviewerdataComponent},
+      { path: 'interviewerList', component: InterviewerListComponent},
+      
+
     ]
   },
 

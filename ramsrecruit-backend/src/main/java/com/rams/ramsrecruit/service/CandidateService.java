@@ -19,11 +19,6 @@ import java.util.List;
 public class CandidateService {
     @Autowired
    private CandidateRepository candidateRepository;
-   @Autowired
-    private CandidateRepository2 candidateRepository2;
-
-
-
     /**
      * Returns all the candidate data stored in the database
      * @returns Candidate Data in array format
