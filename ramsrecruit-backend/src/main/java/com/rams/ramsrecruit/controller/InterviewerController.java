@@ -11,11 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,9 +28,9 @@ public class InterviewerController {
     @Autowired
     private InterviewerService intrService;
 
-    @GetMapping("/getAllInterviewer")
-    public Interviewer[] getAllInterviewer() {
-        return intrService.getAllInterviewer();
+    @GetMapping("/getInterviewer")
+    public ResponseEntity<Interviewer[]> getAllInterviewer() {
+        return new ResponseEntity<Interviewer[]>(intrService.getAllInterviewer(), HttpStatus.OK);
     }
 
     @PostMapping(value="/addInterviewer", consumes = {"application/json;charset=UTF-8"}, produces={"application/json;charset=UTF-8"})

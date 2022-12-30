@@ -6,7 +6,6 @@ package com.rams.ramsrecruit.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.io.Serializable;
 
 

@@ -24,7 +24,7 @@ public class CandidateController {
     private CandidateService candidateService;
 
     @RequestMapping( "/getallcandidates" )
-    public ResponseEntity<Candidate[]> getStockItem() {
+    public ResponseEntity<Candidate[]> getCandidateData() {
 
         return new ResponseEntity<Candidate[]>(candidateService.getAll(), HttpStatus.OK);
     }
