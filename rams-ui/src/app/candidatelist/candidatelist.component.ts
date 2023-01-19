@@ -12,6 +12,7 @@ import { CandidatelistItem } from './candidatelist-datasource';
 import { LocaldatastorageService } from '../services/localdatastorage.service';
 import { CanidateDataServiceService } from '../services/canidate-data-service.service';
 import { Candidate } from '../shared/Entity/Candidate';
+import { DialogContentDialog } from './dialogcontent.Dialog';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
    dataSource!: MatTableDataSource<Candidate>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['name', 'email', 'gender', 'phoneNumber', 'experience', 'tech'];
+  displayedColumns = ['name', 'email', 'gender', 'phoneNumber', 'experience', 'tech', 'interviewResponses'];
 
 
   constructor(
@@ -50,16 +51,16 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
     });
   }
 
-  // /**
-  //  * Invoked when the user clicks the name on the table to edit the data
-  //  * @param candidateData - Data of the candidate
-  //  */
-  // onCandidateDataEdit(candidateData: CandidatelistItem) {
-  //   // console.log(candidateData);
-  //   this.rowDataService.clearEvent();
-  //   this.rowDataService.selectionEvent(candidateData);
-  //   const dialogRef = this.dialog.open(DialogContentDialog, { minWidth: '100%' });
-  // }
+  /**
+   * Invoked when the user clicks the name on the table to edit the data
+   * @param candidateData - Data of the candidate
+   */
+  onCandidateDataEdit(candidateData: CandidatelistItem) {
+    // console.log(candidateData);
+    this.rowDataService.clearEvent();
+    this.rowDataService.selectionEvent(candidateData);
+    const dialogRef = this.dialog.open(DialogContentDialog, { minWidth: '100%' });
+  }
 }
 
 

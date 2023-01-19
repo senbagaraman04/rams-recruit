@@ -14,7 +14,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
   export class DialogContentDialog implements OnInit {
   
-    candidateData!: CandidatelistItem;
+    candidateData!: any;
     myForm!: FormGroup;
     disabled: boolean = true;
     candidateName: string = "";
@@ -58,8 +58,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   
     private populateTableData() {
   
-      this.myForm.patchValue({ first: this.candidateData.fullname });
-      this.candidateName = this.candidateData.fullname;
+      this.myForm.patchValue({ first: this.candidateData.name });
+      this.candidateName = this.candidateData.name;
       if (this.candidateData.l1Response) {
         this.myForm.patchValue({ l1Response: this.candidateData.l1Response });
         this.myForm.get('l1Response')?.disable();

@@ -34,6 +34,7 @@ import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
 import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
 import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
+import { DialogContentDialog } from './candidatelist/dialogcontent.Dialog';
  @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { InterviewerListComponent } from './interviewer-list/interviewer-list.co
     OfferDetailsComponent,
     DasboardwrapperComponent,
     InterviewerdataComponent,
-    InterviewerListComponent
+    InterviewerListComponent,
+    DialogContentDialog
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { InterviewerListComponent } from './interviewer-list/interviewer-list.co
     MatSidenavModule, 
     MatListModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

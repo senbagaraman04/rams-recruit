@@ -31,4 +31,6 @@ public class Candidate implements Serializable {
     String phoneNumber;
     @Column(name="gender")
     String gender;
+    @Column(name="interviewResponse")
+    String interviewResponse;
 }
