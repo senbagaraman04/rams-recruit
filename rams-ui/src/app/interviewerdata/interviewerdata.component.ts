@@ -34,10 +34,10 @@ export class InterviewerdataComponent implements OnInit {
 
 
   onSubmit(){
-    this.intrService.addInterviewerData(this.myForm.value).subscribe(res=>{
-    //  console.log(res);
-
-     });
+    if(this.myForm.dirty){
+      this.intrService.addInterviewerData(this.myForm.value)
+    }
+  
   }
 
   onClear(){
