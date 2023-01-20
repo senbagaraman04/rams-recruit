@@ -1,17 +1,13 @@
-/**
- * https://github.com/senbagaraman04/rams-recruit
- */
-
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CanidateDataServiceService } from '../services/canidate-data-service.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
 
 @Component({
-  selector: 'app-addcandidateform',
-  templateUrl: './addcandidateform.component.html',
-  styleUrls: ['./addcandidateform.component.scss']
+  selector: 'app-candidateform',
+  templateUrl: './candidateform.component.html',
+  styleUrls: ['./candidateform.component.scss']
 })
-export class AddcandidateformComponent implements OnInit {
+export class CandidateformComponent implements OnInit {
   myForm!: FormGroup;
   showForm: boolean = true;
 

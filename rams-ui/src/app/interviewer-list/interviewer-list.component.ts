@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { CandidatelistItem } from '../candidatelist/candidatelist-datasource';
+import { CandidatelistItem } from '../candidates/candidatelist/candidatelist-datasource';
 import { CanidateDataServiceService } from '../services/canidate-data-service.service';
 import { InterviewerDataServiceService } from '../services/interviewer-data-service.service';
 import { LocaldatastorageService } from '../services/localdatastorage.service';

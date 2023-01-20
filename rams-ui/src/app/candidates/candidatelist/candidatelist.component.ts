@@ -9,10 +9,10 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CandidatelistItem } from './candidatelist-datasource';
-import { LocaldatastorageService } from '../services/localdatastorage.service';
-import { CanidateDataServiceService } from '../services/canidate-data-service.service';
-import { Candidate } from '../shared/Entity/Candidate';
-import { DialogContentDialog } from './dialogcontent.Dialog';
+ 
+import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
+import { LocaldatastorageService } from 'src/app/services/localdatastorage.service';
+import { Candidate } from 'src/app/shared/Entity/Candidate';
 
 
 @Component({
@@ -56,10 +56,9 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
    * @param candidateData - Data of the candidate
    */
   onCandidateDataEdit(candidateData: CandidatelistItem) {
-    // console.log(candidateData);
+   console.log(candidateData);
     this.rowDataService.clearEvent();
-    this.rowDataService.selectionEvent(candidateData);
-    const dialogRef = this.dialog.open(DialogContentDialog, { minWidth: '100%' });
+    this.rowDataService.selectionEvent(candidateData);     
   }
 }
 
