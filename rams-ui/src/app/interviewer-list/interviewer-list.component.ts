@@ -2,12 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { CandidatelistItem } from '../candidatelist/candidatelist-datasource';
-import { CanidateDataServiceService } from '../services/canidate-data-service.service';
+import { MatTableDataSource } from '@angular/material/table';
 import { InterviewerDataServiceService } from '../services/interviewer-data-service.service';
-import { LocaldatastorageService } from '../services/localdatastorage.service';
-import { Candidate } from '../shared/Entity/Candidate';
 import { Interviewer } from '../shared/Entity/Interviewer';
 
 @Component({
@@ -27,7 +23,6 @@ export class InterviewerListComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private rowDataService: LocaldatastorageService,
     private intrService: InterviewerDataServiceService) {
 
   }

@@ -12,9 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
-import java.util.List;
-
 @Controller
 @RequestMapping("/ramsapi")
 @CrossOrigin(origins = "http://localhost:4200")
@@ -28,6 +25,14 @@ public class CandidateController {
 
         return new ResponseEntity<Candidate[]>(candidateService.getAll(), HttpStatus.OK);
     }
+
+
+
+    @GetMapping("/getCandidatebyId")
+    public ResponseEntity<Candidate> getCadidatebyID(@RequestParam() Integer id){
+        return new ResponseEntity<Candidate>(candidateService.getCandidatebyId(id), HttpStatus.OK);
+    }
+
 
 
     @GetMapping("/getallcount")

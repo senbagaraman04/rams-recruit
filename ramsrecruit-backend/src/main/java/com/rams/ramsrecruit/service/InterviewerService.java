@@ -10,6 +10,7 @@ public class InterviewerService {
     @Autowired
     private InterviewerRepository intrvRepo;
 
+
     public Interviewer[] getAllInterviewer(){
         return intrvRepo.getallInterviewer();
     }

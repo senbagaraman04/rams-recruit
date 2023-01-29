@@ -1,21 +1,8 @@
-<mat-sidenav-container class="sidenav-container">
+<!-- <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Ramsrecruit</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link-home" routerLink="home" routerLinkActive="active">Home</a>
-    <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="addCandidate" routerLinkActive="active">New
-        Candidate</a>
-    <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="candidateList"
-        routerLinkActive="active">Candidate List</a>
-        <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="interviewer"
-        routerLinkActive="active">Interviewer List</a>
-        <!--
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="interviewresponse"
-        routerLinkActive="active">Interview Response</a>
-      <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="releasedoffers" routerLinkActive="active">
-        Offer Details</a> -->
-    </mat-nav-list>
+   
     <mat-card class="sidepanel-card ramsrecruit-sidepanel-aboutus">
       <mat-card-header>
         <div mat-card-avatar class="sidepanel-header-image"></div>
@@ -41,14 +28,41 @@
       </button>
       <span>Rams-recruitment</span>
     </mat-toolbar>
-    <div class="rlt-2">
+    <div class="">
 
-      <!-- <app-cards-component></app-cards-component> -->
-
-      <!-- <app-ramsrecruitdasboard></app-ramsrecruitdasboard> -->
-      <router-outlet></router-outlet>
+ 
+    
     </div>
 
 
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Rams Recruitment</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav">
+       
+        <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link-home" routerLink="home" routerLinkActive="active">Home</a>
+      <a mat-list-item href="#" class="nav-item nav-link ramsrecruit-sidenav-link" routerLink="candidate/addcandidates" routerLinkActive="active">New
+          Candidate</a>
+      <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link" routerLink="candidate/viewcandidates"
+          routerLinkActive="active">Candidate List</a>
+          <!-- <a mat-list-item href="#" class=" nav-item nav-link ramsrecruit-sidenav-link disabled" routerLink="#"
+          >Interviewer List</a> -->
+
+          <!--
+        <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="interviewresponse"
+          routerLinkActive="active">Interview Response</a>
+        <a mat-list-item href="#" class="ramsrecruit-sidenav-link" routerLink="releasedoffers" routerLinkActive="active">
+          Offer Details</a> -->
+    
+        </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+

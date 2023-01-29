@@ -17,11 +17,11 @@ export class DasboardwrapperComponent implements OnInit {
   ngOnInit(): void {
   }
   onAddCandidate() {
-    this.router.navigate(['/addCandidate']);
+    this.router.navigate(['/candidate/addcandidates']);
   }
 
   onDashboardClick() {
-    this.router.navigate(['/candidateList']);
+    this.router.navigate(['/candidate/viewcandidates']);
   }
 
 }

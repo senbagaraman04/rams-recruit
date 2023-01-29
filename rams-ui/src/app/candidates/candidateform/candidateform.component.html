@@ -1,0 +1,109 @@
+<div class="container ramsrecruit-onsuccesscandidate" *ngIf="!showForm">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <span>
+          The candidate has been added successfully.
+        </span>
+
+        <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
+          <div class="btn-group" role="group">
+            <button  type="button"  mat-raised-button color="primary" class="btn btn-outline-primary mr-5" (click)="onBackBtn()">
+              <mat-icon> arrow_circle_left </mat-icon> Back </button> &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="showForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <form [formGroup]="candidateForm" data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;">
+          <div class="form-group">
+            <label class="control-label">Full Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Full Name">
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="radio" value="Male" formControlName="gender">
+              <span>Male</span>
+            </label>
+            <label>
+              <input type="radio" value="Female" formControlName="gender">
+              <span>Female</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Email</label>
+            <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email Address">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Phone Number</label>
+            <input formControlName="phoneNumber" type="text" class="form-control" id="phoneNumber"
+              placeholder="Phone Number">
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+
+        <form  [formGroup]="candidateForm" data-toggle="validator" role="form"
+          style="padding:20px 80px 0px 80px;">
+
+          <div class="form-group">
+            <label class="control-label">Experience(years)</label>
+            <input formControlName="experience" type="text" class="form-control" id="experience"
+              placeholder="Experience in Years">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Technology(Comma seperated Values)</label>
+            <input formControlName="techStack" type="text" class="form-control" id="techStack"
+              placeholder="Ex: .net, angular">
+          </div>
+
+          <ng-container *ngIf="isEdit">
+            <div class="form-group">
+              <label class="control-label">Candidate Remarks</label>
+              <textarea formControlName="interviewResponse" class="form-control" id="interviewResponse"
+                placeholder="Update the Candidate Interview Response.">
+                  </textarea>
+            </div>
+          </ng-container>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="d-flex justify-content-around">
+      <form  [formGroup]="candidateForm" data-toggle="validator" role="form"
+        style="padding:20px 80px 0px 80px;">
+
+        <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
+          <div class="btn-group" role="group">
+            <button  type="button"  mat-raised-button color="primary" class="btn btn-primary mr-5"
+              (click)="onSubmit()">Submit</button>&nbsp;
+          </div>
+          <div class="btn-group" role="group">
+            <button  type="button"  mat-raised-button class="btn btn-outline-danger" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
