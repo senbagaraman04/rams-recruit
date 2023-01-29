@@ -14,7 +14,6 @@ import { Candidate } from '../shared/Entity/Candidate';
   providedIn: 'root'
 })
 export class CanidateDataServiceService {
- 
 
   private url = environment.URL;
 
@@ -32,7 +31,7 @@ export class CanidateDataServiceService {
    
     let params = new HttpParams().set("id",id); 
 
-    return this.http.get(this.url+'/getCandidatebyId', { params: params} );
+    return this.http.get<Candidate>(this.url+'/getCandidatebyId', { params: params} );
   }
 
 /**
@@ -40,11 +39,22 @@ export class CanidateDataServiceService {
  * @param candidateData Data to be added
  */
   addCandidateData(candidateData: Candidate) {
+
+   
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
     return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
   }
 
+/**
+ * Patches the candidate data 
+ * @param candidateData 
+ */
+  patchCandidateData(candidateData: Candidate) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+   return this.http.patch(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
+  }
+ 
   
 
 

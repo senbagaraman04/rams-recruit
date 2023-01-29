@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
+import { Candidate } from 'src/app/shared/Entity/Candidate';
 
 @Component({
   selector: 'app-candidateform',
@@ -12,34 +13,51 @@ export class CandidateformComponent implements OnInit {
   candidateForm!: FormGroup;
   showForm: boolean = true;
   id!: string;
+  isEdit = false;
+  candidateData!: Candidate;
 
 
-  constructor(private fb: FormBuilder, private candidateDataService: CanidateDataServiceService, private route: ActivatedRoute) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private candidateDataService: CanidateDataServiceService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.createCandidateForm();
     this.route.paramMap.subscribe((params: ParamMap) => {
-      if(params.get('id') !== null){
+      if (params.get('id') !== null) {
         this.id = params.get('id') as string;
       }
     });
 
     this.showForm = true;
 
-    if(this.id !== null){
+    if (this.id !== null && this.id !== undefined) {
       console.log("Form is in editing state");
+      this.isEdit = true;
       this.patchValues();
     }
-
-    //console.log(this.id)
   }
+
+
   patchValues() {
-   this.candidateDataService.getCandidateData(this.id).subscribe(data=>{
-console.log(data)
-   });
-
+    this.candidateDataService.getCandidateData(this.id).subscribe(data => this.patchFormValues(data));
   }
 
+
+  private patchFormValues(data: Candidate) {
+    this.candidateData = data;
+    this.candidateForm.patchValue({
+      name: data.name,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      experience: data.experience,
+      techStack: data.techStack,
+      gender: data.gender,
+      interviewResponse: data.interviewResponse
+    });
+  }
 
   private createCandidateForm() {
     this.candidateForm = this.fb.group({
@@ -48,23 +66,34 @@ console.log(data)
       phoneNumber: ["", Validators.required],
       experience: ["", Validators.required],
       techStack: ["", Validators.required],
-      gender: ['', Validators.required]
+      gender: ['', Validators.required],
+      interviewResponse: ['', Validators.required]
     });
   }
 
   //TODO:
   onSubmit(): void {
-    console.log(this.candidateForm);
-     this.candidateDataService.addCandidateData(this.candidateForm.value).subscribe(res=>{
-      console.log(res);
+    console.log(this.candidateForm.value);
 
-     });
+    if(this.isEdit){
+      let candidateData = this.candidateForm.value;
+      candidateData.id = this.candidateData.id;
+      this.candidateDataService.patchCandidateData(candidateData)
+
+    }else{
+      this.candidateDataService.addCandidateData(this.candidateForm.value).subscribe(d=>{
+        console.log(d)
+      });
+    }
+    
+   
     this.showForm = false;
   }
 
   onBackBtn(): void {
     this.candidateForm.reset();
     this.showForm = true;
+    this.router.navigate(['/candidate/addcandidates']);
   }
 
   onClear() {

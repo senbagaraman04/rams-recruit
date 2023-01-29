@@ -5,15 +5,8 @@ package com.rams.ramsrecruit.service;
 
 import com.rams.ramsrecruit.entity.Candidate;
 import com.rams.ramsrecruit.repository.CandidateRepository;
-import com.rams.ramsrecruit.repository.CandidateRepository2;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
-import jakarta.websocket.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Collection;
-import java.util.List;
 
 @Service
 public class CandidateService {
@@ -33,5 +26,9 @@ public class CandidateService {
 
     public Candidate addCandidate(Candidate cd) {
         return candidateRepository.save(cd);
+    }
+
+    public Candidate getCandidatebyId(Integer id) {
+         return candidateRepository.findById(id).orElse(null);
     }
 }

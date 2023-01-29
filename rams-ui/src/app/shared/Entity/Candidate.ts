@@ -5,7 +5,7 @@
 
 export interface Candidate {
 
-    id?: number;
+    id: number;
 
     name: string;
 
@@ -18,5 +18,7 @@ export interface Candidate {
     email: string;
 
     phoneNumber: string;
+
+    interviewResponse: string;
 
 }
