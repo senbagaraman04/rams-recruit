@@ -13,6 +13,7 @@ import { CandidatelistItem } from './candidatelist-datasource';
 import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
 import { LocaldatastorageService } from 'src/app/services/localdatastorage.service';
 import { Candidate } from 'src/app/shared/Entity/Candidate';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
 
   constructor(
     public dialog: MatDialog,
+    private router:Router,
     private rowDataService: LocaldatastorageService,
     private candidateService: CanidateDataServiceService) {
 
@@ -55,10 +57,12 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
    * Invoked when the user clicks the name on the table to edit the data
    * @param candidateData - Data of the candidate
    */
-  onCandidateDataEdit(candidateData: CandidatelistItem) {
-   console.log(candidateData);
-    this.rowDataService.clearEvent();
-    this.rowDataService.selectionEvent(candidateData);     
+  onCandidateDataEdit(candidateData: Candidate) {
+   console.log(candidateData.id);
+  //  this.rowDataService.clearEvent();
+    this.rowDataService.storeCandidateData(candidateData);   
+    this.router.navigate([`/candidate/editcandidate/${candidateData.id}`]);
+   // this.rowDataService.rowDataSource.next(candidateData) 
   }
 }
 

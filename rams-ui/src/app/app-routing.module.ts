@@ -9,6 +9,7 @@ import { OfferDetailsComponent } from './offer-details/offer-details.component';
 const routes: Routes = [
   {
     path: '', component: HomepageComponent,
+    
     children: [
       { path: 'home', component: DasboardwrapperComponent },
       {

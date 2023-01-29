@@ -9,7 +9,8 @@ const routes: Routes = [
      path: '', component: CandidatesComponent,
      children:[
       { path: 'addcandidates', component: CandidateformComponent },
-      { path: 'viewcandidates', component: CandidatelistComponent}
+      { path: 'viewcandidates', component: CandidatelistComponent},
+      { path: 'editcandidate/:id', component: CandidateformComponent}
      ]
   }
 ];

@@ -21,7 +21,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="row">
-          <form  [formGroup]="myForm" data-toggle="validator" role="form"
+          <form  [formGroup]="candidateForm" data-toggle="validator" role="form"
             style="padding:20px 80px 0px 80px;">
             <div class="form-group">
               <label class="control-label">Full Name</label>
@@ -56,7 +56,7 @@
       <div class="col-md-6">
         <div class="row">
   
-          <form *ngIf="showForm" [formGroup]="myForm" data-toggle="validator" role="form"
+          <form *ngIf="showForm" [formGroup]="candidateForm" data-toggle="validator" role="form"
             style="padding:20px 80px 0px 80px;">
   
             <div class="form-group">
@@ -113,7 +113,7 @@
     <div class="row">
    
   <div class="d-flex justify-content-around">
-    <form *ngIf="showForm" [formGroup]="myForm" data-toggle="validator" role="form"
+    <form *ngIf="showForm" [formGroup]="candidateForm" data-toggle="validator" role="form"
     style="padding:20px 80px 0px 80px;">
   
     <!-- <div class="form-group">
