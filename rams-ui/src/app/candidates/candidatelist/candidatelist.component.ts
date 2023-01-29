@@ -5,15 +5,13 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-
-import { CandidatelistItem } from './candidatelist-datasource';
- 
+import { Router } from '@angular/router';
 import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
 import { LocaldatastorageService } from 'src/app/services/localdatastorage.service';
 import { Candidate } from 'src/app/shared/Entity/Candidate';
-import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -58,11 +56,7 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
    * @param candidateData - Data of the candidate
    */
   onCandidateDataEdit(candidateData: Candidate) {
-   console.log(candidateData.id);
-  //  this.rowDataService.clearEvent();
-    this.rowDataService.storeCandidateData(candidateData);   
     this.router.navigate([`/candidate/editcandidate/${candidateData.id}`]);
-   // this.rowDataService.rowDataSource.next(candidateData) 
   }
 }
 
