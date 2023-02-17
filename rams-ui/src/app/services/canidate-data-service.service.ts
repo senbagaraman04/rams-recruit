@@ -52,7 +52,8 @@ export class CanidateDataServiceService {
  */
   patchCandidateData(candidateData: Candidate) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-   return this.http.patch(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
+    return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
+  // return this.http.patch(this.url+"/addCandidates2", JSON.stringify(candidateData), { headers: headers });
   }
  
   

@@ -78,14 +78,11 @@ export class CandidateformComponent implements OnInit {
     if(this.isEdit){
       let candidateData = this.candidateForm.value;
       candidateData.id = this.candidateData.id;
-      this.candidateDataService.patchCandidateData(candidateData)
-
-    }else{
-      this.candidateDataService.addCandidateData(this.candidateForm.value).subscribe(d=>{
-        console.log(d)
-      });
-    }
+    } 
     
+    this.candidateDataService.addCandidateData(this.candidateForm.value).subscribe(d=>{
+      console.log(d)
+     });
    
     this.showForm = false;
   }
