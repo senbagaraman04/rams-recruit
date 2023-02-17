@@ -24,6 +24,10 @@ public class CandidateService {
         return candidateRepository.count();
     }
 
+    /**
+     * @param cd - Candidate Data
+     * @return - nothing
+     */
     public Candidate addCandidate(Candidate cd) {
         return candidateRepository.save(cd);
     }
