@@ -26,7 +26,18 @@ public class LoginController {
 
     @GetMapping("/login")
     public ResponseEntity<Boolean> authenticateLogin(@RequestBody Login lg){
-        return new ResponseEntity<Boolean>(HttpStatus.OK);
+
+        if(lg != null){
+            Login requestedData = loginService.findUserLoginDetails(lg.getEmail());
+
+            if(requestedData.getEmail().equals(lg.getEmail())){
+                if(requestedData.getPassword().equals(lg.getPassword())){
+                    return new ResponseEntity<Boolean>(HttpStatus.OK);
+                }
+            }
+
+        }
+        return new ResponseEntity<Boolean>(HttpStatus.BAD_REQUEST);
     }
 
 }
