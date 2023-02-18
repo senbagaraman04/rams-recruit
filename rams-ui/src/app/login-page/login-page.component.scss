@@ -15,11 +15,11 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    // background: #9053c7;
+    // background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    // background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    // background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    // background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
 
 .rrms-wrap-panel {
@@ -39,11 +39,11 @@
 }
 
 
-.login100-form {
+.rrms-loginform {
     width: 290px;
 }
 
-.login100-form-title {
+.rrms-loginform-title {
     // font-family: Poppins-Bold;
     font-size: 24px;
     color: #333333;
@@ -57,7 +57,7 @@
 
 
 
-.login100-form-btn {
+.rrms-loginform-btn {
     // font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;
@@ -85,4 +85,9 @@
   
   .login100-form-btn:hover {
     background: #333333;
+  }
+
+
+  .rrms-login-image {
+    align-self: center;
   }
