@@ -23,40 +23,40 @@ export class CanidateDataServiceService {
    * returns the list of all candidates
    * @returns candidatelist
    */
-  getAllCandidates(): Observable<any>{
-    return this.http.get(this.url+"/getallcandidates");
+  getAllCandidates(): Observable<any> {
+    return this.http.get(this.url + "/getallcandidates");
   }
 
   getCandidateData(id: any) {
-   
-    let params = new HttpParams().set("id",id); 
 
-    return this.http.get<Candidate>(this.url+'/getCandidatebyId', { params: params} );
+    let params = new HttpParams().set("id", id);
+
+    return this.http.get<Candidate>(this.url + '/getCandidatebyId', { params: params });
   }
 
-/**
- * Adds the candidate data to the backend.
- * @param candidateData Data to be added
- */
+  /**
+   * Adds the candidate data to the backend.
+   * @param candidateData Data to be added
+   */
   addCandidateData(candidateData: Candidate) {
 
-   
+
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
-    return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
+    return this.http.post(this.url + "/addCandidates", JSON.stringify(candidateData), { headers: headers });
   }
 
-/**
- * Patches the candidate data 
- * @param candidateData 
- */
+  /**
+   * Patches the candidate data 
+   * @param candidateData 
+   */
   patchCandidateData(candidateData: Candidate) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(this.url+"/addCandidates", JSON.stringify(candidateData), { headers: headers });
-  // return this.http.patch(this.url+"/addCandidates2", JSON.stringify(candidateData), { headers: headers });
+    return this.http.post(this.url + "/addCandidates", JSON.stringify(candidateData), { headers: headers });
+    // return this.http.patch(this.url+"/addCandidates2", JSON.stringify(candidateData), { headers: headers });
   }
- 
-  
+
+
 
 
 }
