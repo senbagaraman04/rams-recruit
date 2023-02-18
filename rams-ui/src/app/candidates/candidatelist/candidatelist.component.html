@@ -1,4 +1,5 @@
 <div class="pt-2 mt-2 mr-2 pr-2 ramsrecruit-candidatetable">
+  <span> To edit a particular candidate, click on the candidate name</span>
   <table mat-table class="full-width-table mat-elevation-z8" matSort [dataSource]="dataSource" aria-label="Candidates">
 
 
@@ -6,7 +7,10 @@
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         Fullname</th>
-       <td mat-cell *matCellDef="let row" (click)="onCandidateDataEdit(row)">{{row.name}}</td>
+       <td mat-cell *matCellDef="let row" (click)="onCandidateDataEdit(row)">
+        <a>
+          {{row.name}}
+        </a></td>
       <td mat-cell *matCellDef="let row">{{row.name}}</td>
     </ng-container>
 

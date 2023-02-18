@@ -42,12 +42,27 @@ public class CandidateController {
 
     @PostMapping(value="/addCandidates", consumes = {"application/json;charset=UTF-8"}, produces={"application/json;charset=UTF-8"})
     public ResponseEntity<String> addCandidate(@RequestBody Candidate cd){
+        System.out.println(cd);
         if(cd != null){
             candidateService.addCandidate(cd);
 
-            return new ResponseEntity<String>("Candidate Added Successfully", HttpStatus.OK);
+            return new ResponseEntity<String>("", HttpStatus.OK);
         }else{
-            return new ResponseEntity<String>("Candidate Not Added", HttpStatus.NOT_MODIFIED);
+            return new ResponseEntity<String>("", HttpStatus.NOT_MODIFIED);
+        }
+
+    }
+
+
+    @PatchMapping(value="/addCandidates2", consumes = {"application/json;charset=UTF-8"}, produces={"application/json;charset=UTF-8"})
+    public ResponseEntity<String> patchCandidate(@RequestBody Candidate cd){
+        System.out.println(cd);
+        if(cd != null){
+            candidateService.addCandidate(cd);
+
+            return new ResponseEntity<String>("", HttpStatus.OK);
+        }else{
+            return new ResponseEntity<String>("", HttpStatus.NOT_MODIFIED);
         }
 
     }
