@@ -4,6 +4,7 @@ import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.comp
 import { HomepageComponent } from './homepage/homepage.component';
 import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
 import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
     path: '', component: HomepageComponent,
     
     children: [
-      { path: 'home', component: DasboardwrapperComponent },
+      { path: 'home', component: LoginPageComponent },
       {
         path: 'candidate',
         loadChildren: () => import('./candidates/candidates.module').then((m => m.CandidatesModule)),      

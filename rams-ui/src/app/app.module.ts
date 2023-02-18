@@ -30,6 +30,7 @@ import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
 import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
 import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { InterviewerListComponent } from './interviewer-list/interviewer-list.co
     DasboardwrapperComponent,
     InterviewerdataComponent,
     InterviewerListComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
