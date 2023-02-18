@@ -5,28 +5,26 @@
                 <img src="https://media.tenor.com/S8dOItPNscgAAAAi/loop-loading.gif" alt="Rams-recruitment">
             </div>
 
-            <form class="rrms-loginform">
+            <form class="rrms-loginform" [formGroup]="loginForm">
                 <span class="rrms-loginform-title">
                     Recruitment Panel Login
                 </span>
-
                 <div class="rrms-login-email">
-                    <input class="form-control mb-2" type="text" name="email" placeholder="Email">
+                    <input formControlName="name" class="form-control mb-2" type="text" name="email"
+                        placeholder="Email">
                 </div>
-
                 <div class="rrms-login-email">
-                    <input class="form-control mb-2" type="password" name="pass" placeholder="Password">
+                    <input formControlName="name" class="form-control mb-2" type="password" name="password"
+                        placeholder="Password">
                 </div>
-
                 <div class="container">
-                    <button class="rrms-loginform-btn">
+                    <button class="rrms-loginform-btn"  (click)="onLogin()">
                         Login
                     </button>
                 </div>
-
-                 <div class="text-center text-muted">
-                   &copy;  rams-recruitment-system v0.0.4
-                </div> 
+                <div class="text-center text-muted">
+                    &copy; rams-recruitment-system v0.0.4
+                </div>
             </form>
         </div>
     </div>
