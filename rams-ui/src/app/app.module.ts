@@ -31,6 +31,7 @@ import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.comp
 import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
 import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
  @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MatListModule,
     MatDialogModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
