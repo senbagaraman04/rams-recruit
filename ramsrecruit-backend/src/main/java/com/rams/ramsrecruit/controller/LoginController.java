@@ -4,6 +4,7 @@
 
 package com.rams.ramsrecruit.controller;
 
+import com.rams.ramsrecruit.entity.Interviewer;
 import com.rams.ramsrecruit.entity.Login;
 import com.rams.ramsrecruit.service.LoginService;
 import org.springframework.stereotype.Controller;
@@ -24,20 +25,21 @@ public class LoginController {
     private LoginService loginService;
 
 
-    @GetMapping("/login")
-    public ResponseEntity<Boolean> authenticateLogin(@RequestBody Login lg){
+    @PostMapping(value="/login", consumes = {"application/json;charset=UTF-8"}, produces={"application/json;charset=UTF-8"})
+    public ResponseEntity<String> authenticateLogin(@RequestBody Login lg){
 
-        if(lg != null){
+       if(lg != null){
             Login requestedData = loginService.findUserLoginDetails(lg.getEmail());
 
             if(requestedData.getEmail().equals(lg.getEmail())){
                 if(requestedData.getPassword().equals(lg.getPassword())){
-                    return new ResponseEntity<Boolean>(HttpStatus.OK);
+                    return new ResponseEntity<String>(HttpStatus.OK);
                 }
             }
 
         }
-        return new ResponseEntity<Boolean>(HttpStatus.BAD_REQUEST);
+
+        return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
     }
 
 }

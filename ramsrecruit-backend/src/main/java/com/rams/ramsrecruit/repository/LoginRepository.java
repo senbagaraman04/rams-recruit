@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface LoginRepository extends JpaRepository<Login, Integer> {
 
-    @Query(value = "select s from login where s.email=?1",nativeQuery = true)
+    @Query(value = "select * from login where email=?1",nativeQuery = true)
     Login findLoginDetails(String email);
 
 
