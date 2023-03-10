@@ -28,8 +28,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
-import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
-import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
  @NgModule({
@@ -38,8 +36,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomepageComponent,
     OfferDetailsComponent,
     DasboardwrapperComponent,
-    InterviewerdataComponent,
-    InterviewerListComponent,
     LoginPageComponent,
   ],
   imports: [
