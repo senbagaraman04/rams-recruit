@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
 import { LocaldatastorageService } from 'src/app/services/localdatastorage.service';
 import { Candidate } from 'src/app/shared/Entity/Candidate';
+import { CANDIDATE, EDIT_CANDIDATE, HOMEPAGE, SLASH } from 'src/app/shared/Constants/redirection-link';
 
 
 
@@ -56,7 +57,7 @@ export class CandidatelistComponent implements AfterViewInit, OnInit {
    * @param candidateData - Data of the candidate
    */
   onCandidateDataEdit(candidateData: Candidate) {
-    this.router.navigate([`/candidate/editcandidate/${candidateData.id}`]);
+    this.router.navigate([ HOMEPAGE + CANDIDATE + EDIT_CANDIDATE + SLASH + `${candidateData.id}`]);
   }
 }
 

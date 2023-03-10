@@ -8,11 +8,11 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 
 const routes: Routes = [
+  {path: 'login', component: LoginPageComponent},
   {
-    path: '', component: HomepageComponent,
+    path: 'home', component: HomepageComponent  ,
     
     children: [
-      { path: 'home', component: LoginPageComponent },
       {
         path: 'candidate',
         loadChildren: () => import('./candidates/candidates.module').then((m => m.CandidatesModule)),      

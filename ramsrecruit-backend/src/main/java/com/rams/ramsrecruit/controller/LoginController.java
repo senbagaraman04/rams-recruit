@@ -39,7 +39,7 @@ public class LoginController {
 
         }
 
-        return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 
 }

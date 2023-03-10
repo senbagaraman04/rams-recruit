@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from '../services/loginservice.service';
  
 @Component({
@@ -9,7 +10,7 @@ import { LoginService } from '../services/loginservice.service';
 })
 export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
-  constructor( private fb: FormBuilder, private loginService:LoginService) {
+  constructor( private fb: FormBuilder, private loginService:LoginService, private router: Router) {
     
    }
 
@@ -26,7 +27,8 @@ export class LoginPageComponent implements OnInit {
 
   onLogin() {
     this.loginService.authenticateUser(this.loginForm.value).subscribe(d=>{
-      console.log(d)
+      console.log(d);
+      this.router.navigate(['/home']);
     })
   }
 
