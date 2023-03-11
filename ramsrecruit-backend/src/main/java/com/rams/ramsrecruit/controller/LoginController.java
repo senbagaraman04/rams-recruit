@@ -25,21 +25,25 @@ public class LoginController {
     private LoginService loginService;
 
 
-    @PostMapping(value="/login", consumes = {"application/json;charset=UTF-8"}, produces={"application/json;charset=UTF-8"})
+    @PostMapping(value="/login", consumes = {"application/json;charset=UTF-8"}, produces={"application/text;charset=UTF-8"})
     public ResponseEntity<String> authenticateLogin(@RequestBody Login lg){
 
        if(lg != null){
             Login requestedData = loginService.findUserLoginDetails(lg.getEmail());
 
+            if(requestedData == null){
+                return new ResponseEntity<String>("No Email/Password combination Exist", HttpStatus.BAD_REQUEST);
+            }
+
             if(requestedData.getEmail().equals(lg.getEmail())){
                 if(requestedData.getPassword().equals(lg.getPassword())){
-                    return new ResponseEntity<String>(HttpStatus.OK);
+                    return new ResponseEntity<String>("User authenticated", HttpStatus.OK);
                 }
             }
 
         }
 
-        return new ResponseEntity<String>(HttpStatus.OK);
+        return new ResponseEntity<String>("No Email/Password combination Exist", HttpStatus.BAD_REQUEST);
     }
 
 }

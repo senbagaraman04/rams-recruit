@@ -27,8 +27,12 @@ export class LoginPageComponent implements OnInit {
 
   onLogin() {
     this.loginService.authenticateUser(this.loginForm.value).subscribe(d=>{
-      console.log(d);
-      this.router.navigate(['/home']);
+       if(d == "User authenticated"){
+        this.router.navigate(['/home']);
+       }
+      else{
+        console.log(d)
+      }
     })
   }
 

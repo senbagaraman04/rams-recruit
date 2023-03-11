@@ -14,9 +14,15 @@ export class LoginService {
   public authenticateUser(loginData: Login) {
 
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    const requestOptions: Object = {
+      headers: headers,
+      responseType: 'text'
+    }
 
-    return this.http.post(this.url + "/login", JSON.stringify(loginData),{ headers: headers });
+    return this.http.post<any>(this.url + "/login", JSON.stringify(loginData),requestOptions);
   }
+
+ 
 
 
 }
