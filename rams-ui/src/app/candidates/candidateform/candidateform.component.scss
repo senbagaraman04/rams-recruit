@@ -2,3 +2,18 @@
  * https://github.com/senbagaraman04/rams-recruit
  */
 
+ .ramsrecruit-onsuccesscandidate {
+   
+    height: 100px;
+   background-color: white;  
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid red;
+    margin: auto;
+    .row {
+        text-align: center;
+    }
+}

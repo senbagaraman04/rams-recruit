@@ -3,13 +3,13 @@
     <div class="col-md-12">
       <div class="row">
         <span>
-          The candidate has been added successfully.
+          The candidate has been added/updated successfully.
         </span>
 
         <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
           <div class="btn-group" role="group">
-            <button  type="button"  mat-raised-button color="primary" class="btn btn-outline-primary mr-5" (click)="onBackBtn()">
-              <mat-icon> arrow_circle_left </mat-icon> Back </button> &nbsp;
+            <button type="button" mat-raised-button color="primary" class="btn btn-primary mr-5" (click)="onBackBtn()">
+              Back </button> &nbsp;
           </div>
         </div>
       </div>
@@ -55,8 +55,7 @@
     <div class="col-md-6">
       <div class="row">
 
-        <form  [formGroup]="candidateForm" data-toggle="validator" role="form"
-          style="padding:20px 80px 0px 80px;">
+        <form [formGroup]="candidateForm" data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;">
 
           <div class="form-group">
             <label class="control-label">Experience(years)</label>
@@ -88,16 +87,15 @@
   <div class="row">
 
     <div class="d-flex justify-content-around">
-      <form  [formGroup]="candidateForm" data-toggle="validator" role="form"
-        style="padding:20px 80px 0px 80px;">
+      <form [formGroup]="candidateForm" data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;">
 
         <div class="form-group  ramsrecruit-addstudent-buttons mt-2 pt-2">
           <div class="btn-group" role="group">
-            <button  type="button"  mat-raised-button color="primary" class="btn btn-primary mr-5"
+            <button type="button" mat-raised-button color="primary" class="btn btn-primary mr-5"
               (click)="onSubmit()">Submit</button>&nbsp;
           </div>
           <div class="btn-group" role="group">
-            <button  type="button"  mat-raised-button class="btn btn-danger" (click)="onClear()">Clear</button>
+            <button type="button" mat-raised-button class="btn btn-danger" (click)="onClear()">Clear</button>
           </div>
         </div>
 

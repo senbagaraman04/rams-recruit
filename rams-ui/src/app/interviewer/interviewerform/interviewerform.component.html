@@ -1,0 +1,12 @@
+<div style="padding: 51px 51px;">
+    <ng-container [formGroup]="intrForm">
+        <div *ngFor="let item of controls">
+            <mat-form-field>
+                <mat-label>
+                    {{getControlName(item)}}
+                </mat-label>
+                <input matInput [formControlName]="item" [required]="true">
+            </mat-form-field>
+        </div>
+    </ng-container>
+</div>
