@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CanidateDataServiceService } from 'src/app/services/canidate-data-service.service';
+import { ADD_CANDIDATE, CANDIDATE, HOMEPAGE } from 'src/app/shared/Constants/redirection-link';
 import { Candidate } from 'src/app/shared/Entity/Candidate';
 
 @Component({
@@ -90,7 +91,7 @@ export class CandidateformComponent implements OnInit {
   onBackBtn(): void {
     this.candidateForm.reset();
     this.showForm = true;
-    this.router.navigate(['/candidate/addcandidates']);
+    this.router.navigate([ HOMEPAGE+CANDIDATE+ADD_CANDIDATE]);
   }
 
   onClear() {

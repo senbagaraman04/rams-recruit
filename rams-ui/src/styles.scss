@@ -8,5 +8,15 @@
 @import '~@angular/material/theming';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
 
+}
+
+.text-center { text-align: center; }

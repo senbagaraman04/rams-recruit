@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { InterviewerListComponent } from './interviewer-list/interviewer-list.component';
-import { InterviewerdataComponent } from './interviewerdata/interviewerdata.component';
-import { OfferDetailsComponent } from './offer-details/offer-details.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginPageComponent },
   {
-    path: '', component: HomepageComponent,
-    
+    path: 'home', component: HomepageComponent,
+
     children: [
-      { path: 'home', component: DasboardwrapperComponent },
       {
         path: 'candidate',
-        loadChildren: () => import('./candidates/candidates.module').then((m => m.CandidatesModule)),      
-        
+        loadChildren: () => import('./candidates/candidates.module').then((m => m.CandidatesModule))
+      },
+      {
+        path: 'interviewer',
+        loadChildren: () => import('./interviewer/interviewer.module').then((m => m.InterviewerModule))
       },
       // { path: 'candidateList', component: CandidatelistComponent },
-      { path: 'releasedoffers', component: OfferDetailsComponent },
-      { path: 'interviewer', component: InterviewerdataComponent},
-      { path: 'interviewerList', component: InterviewerListComponent},
-      
+      // { path: 'releasedoffers', component: OfferDetailsComponent },
+      // { path: 'interviewer', component: InterviewerdataComponent},
+      // { path: 'interviewerList', component: InterviewerListComponent},
+
 
     ]
   },
