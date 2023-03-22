@@ -6,6 +6,7 @@ import { InterviewerlistComponent } from './interviewerlist/interviewerlist.comp
 import { InterviewerRoutingModule } from './interviewer-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -19,7 +20,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     CommonModule,
     InterviewerRoutingModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class InterviewerModule { }

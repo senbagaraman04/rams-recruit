@@ -30,18 +30,26 @@ export class InterviewerformComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.createInterviewerForm()
+    this.createInterviewerForm();
   }
 
   createInterviewerForm() {
     this.controls = Object.keys(this.formData);
     for (const controlName of this.controls) {
-      const control: FormControl = new FormControl('')
+      const control: FormControl = new FormControl('');
       this.intrForm.addControl(controlName, control);
     }
   }
 
   getControlName(key: string) {
     return this.formData[key].name
+  }
+
+  onSubmit() {
+
+  }
+
+  onClear() {
+    
   }
 }

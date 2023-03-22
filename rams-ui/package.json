@@ -18,7 +18,8 @@
     "local:start": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ng build --configuration production --aot"
+    "postinstall": "ng build --configuration production --aot",
+    "lint-error":"./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'"
   },
   "private": true,
   "engines": {
@@ -66,6 +67,7 @@
     "@angular/cli": "~14.0.6",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
+    "codelyzer": "^6.0.2",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
