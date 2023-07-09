@@ -25,11 +25,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ErrorHttpCatchInterceptor } from './shared/interceptors/error-http-catch.interceptor';
  @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorHttpCatchInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,26 +1,49 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Rams Recruitment</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
-       
-        <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link-home" routerLink="/home" routerLinkActive="active">Home</a>
-      <a mat-list-item href="#" class="nav-item nav-link ramsrecruit-sidenav-link" routerLink="candidate/addcandidates" routerLinkActive="active">New
-          Candidate</a>
-      <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link" routerLink="candidate/viewcandidates"
-          routerLinkActive="active">Candidate List</a>
 
-          <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link" routerLink="interviewer/addinterviewer"
-          routerLinkActive="active">Add Interviewer</a>    
-          <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link" routerLink="interviewer/interviewerlist"
-          routerLinkActive="active">Interviewer List</a>    
-        
-    
-        </ul>
+      <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link-home" routerLink="/home"
+        routerLinkActive="active">Home</a>
+      <a mat-list-item href="#" class="nav-item nav-link ramsrecruit-sidenav-link" routerLink="candidate/addcandidates"
+        routerLinkActive="active">New
+        Candidate</a>
+      <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link"
+        routerLink="candidate/viewcandidates" routerLinkActive="active">Candidate List</a>
+
+      <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link"
+        routerLink="interviewer/addinterviewer" routerLinkActive="active">Add Interviewer</a>
+      <a mat-list-item href="#" class=" nav-item nav-link  ramsrecruit-sidenav-link"
+        routerLink="interviewer/interviewerlist" routerLinkActive="active">Interviewer List</a>
+
+
+    </ul>
   </div>
-</nav> 
+</nav>
 
- <router-outlet></router-outlet> 
+<div class="home-body-buttons container-fluid rlt-2">
+  <div class="card rlt-2 rams-home-card">
+    <div class="row">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary rams-btn">Add Interview Response</button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary rams-btn">Map Interview</button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary rams-btn">Status Overview</button>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary rams-btn" disabled="true">Prepare Consolidated Data</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<router-outlet></router-outlet>
