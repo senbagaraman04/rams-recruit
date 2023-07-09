@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MapinterviewComponent } from './mapinterview/mapinterview.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -10,6 +11,7 @@ const routes: Routes = [
     path: 'home', component: HomepageComponent,
 
     children: [
+     
       {
         path: 'candidate',
         loadChildren: () => import('./candidates/candidates.module').then((m => m.CandidatesModule))

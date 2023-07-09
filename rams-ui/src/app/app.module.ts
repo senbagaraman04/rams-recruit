@@ -31,6 +31,7 @@ import { DasboardwrapperComponent } from './dasboardwrapper/dasboardwrapper.comp
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ErrorHttpCatchInterceptor } from './shared/interceptors/error-http-catch.interceptor';
+import { MapinterviewComponent } from './mapinterview/mapinterview.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { ErrorHttpCatchInterceptor } from './shared/interceptors/error-http-catc
     OfferDetailsComponent,
     DasboardwrapperComponent,
     LoginPageComponent,
+    MapinterviewComponent,
   ],
   imports: [
     BrowserModule,
