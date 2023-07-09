@@ -1,0 +1,22 @@
+<div style="padding: 51px 51px;" class="ramsrecruit-bgcolor-lb">
+    <ng-container [formGroup]="intrForm" data-toggle="validator" role="form">
+        <div *ngFor="let item of controls">
+            <mat-form-field aria-label="form-fields">
+                <mat-label class="control-label" >
+                    {{getControlName(item)}}
+                </mat-label>
+                <input matInput [formControlName]="item" [required]="true">
+            </mat-form-field>
+        </div>
+
+        <div class="form-group mt-2 pt-2">
+            <div class="btn-group" role="group">
+              <button type="button" mat-raised-button color="primary" class="btn btn-primary mr-5"
+                (click)="onSubmit()">Submit</button>&nbsp;
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" mat-raised-button class="btn btn-danger" (click)="onClear()">Clear</button>
+            </div>
+          </div>
+    </ng-container>
+</div>

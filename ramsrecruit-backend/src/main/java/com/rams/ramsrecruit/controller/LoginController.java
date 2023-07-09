@@ -32,7 +32,7 @@ public class LoginController {
             Login requestedData = loginService.findUserLoginDetails(lg.getEmail());
 
             if(requestedData == null){
-                return new ResponseEntity<String>("No Email/Password combination Exist", HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<String>("No Email/Password combination Exist", HttpStatus.OK);
             }
 
             if(requestedData.getEmail().equals(lg.getEmail())){

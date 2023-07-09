@@ -7,8 +7,8 @@ export interface Interviewer {
 
     name: string;
 
-    email: string;
+    level: string;
 
-    phoneNumber: string;
+    skill: string;
 
 }
