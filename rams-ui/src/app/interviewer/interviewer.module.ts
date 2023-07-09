@@ -4,9 +4,11 @@ import { InterviewerWrapperComponent } from './interviewer-wrapper/interviewer-w
 import { InterviewerformComponent } from './interviewerform/interviewerform.component';
 import { InterviewerlistComponent } from './interviewerlist/interviewerlist.component';
 import { InterviewerRoutingModule } from './interviewer-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -21,7 +23,10 @@ import { MatInputModule } from '@angular/material/input';
     InterviewerRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    FormsModule,
+    MatIconModule, 
   ]
 })
 export class InterviewerModule { }

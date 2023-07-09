@@ -31,7 +31,7 @@
             <label>
               <input type="radio" value="Male" formControlName="gender">
               <span>Male</span>
-            </label>
+            </label> &nbsp;&nbsp;
             <label>
               <input type="radio" value="Female" formControlName="gender">
               <span>Female</span>
@@ -72,9 +72,9 @@
           <ng-container *ngIf="isEdit">
             <div class="form-group">
               <label class="control-label">Candidate Remarks</label>
-              <textarea formControlName="interviewResponse" class="form-control" id="interviewResponse"
-                placeholder="Update the Candidate Interview Response.">
-                  </textarea>
+              <textarea formControlName="interviewResponse" class="form-control" id="interviewResponse" name="interviewResponse"
+                placeholder="Update the Candidate Interview Response." rows="10" cols="40">
+              </textarea>
             </div>
           </ng-container>
 

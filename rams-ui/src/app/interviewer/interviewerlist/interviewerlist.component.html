@@ -1,1 +1,38 @@
-<p>interviewerlist works!</p>
+<div class="pt-2 mt-2 mr-2 pr-2 ramsrecruit-interviewTable">
+    <!-- <span> To edit a particular candidate, click on the candidate name</span> -->
+    <table mat-table class="full-width-table mat-elevation-z8" matSort [dataSource]="dataSource" aria-label="Interviewers">
+  
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Fullname</th>
+         <td mat-cell *matCellDef="let row" > <!--(click)="onCandidateDataEdit(row)"-->
+          <a>
+            {{row.name}}
+          </a></td>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+  
+      <!-- Interview Level -->
+      <ng-container matColumnDef="level">
+        <th mat-header-cell *matHeaderCellDef>Interview Level</th>
+        <td mat-cell *matCellDef="let row">{{row.level}}</td>
+      </ng-container>
+  
+      <!-- Skill -->
+      <ng-container matColumnDef="skill">
+        <th mat-header-cell *matHeaderCellDef>Skill</th>
+        <td mat-cell *matCellDef="let row">{{row.skill}}</td>
+      </ng-container>
+  
+    
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]" aria-label="Select page">
+    </mat-paginator> -->
+  </div>

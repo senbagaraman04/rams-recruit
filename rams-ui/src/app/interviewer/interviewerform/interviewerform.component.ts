@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { InterviewerDataServiceService } from 'src/app/services/interviewer-data-service.service';
 
 @Component({
   selector: 'app-interviewerform',
@@ -11,15 +12,15 @@ export class InterviewerformComponent implements OnInit {
   intrForm: FormGroup = new FormGroup({});
 
   formData: any = {
-    interviewName: {
+    name: {
       name: 'Interviewer Name',
       validators: [Validators.required]
     },
-    primarySkill: {
+    skill: {
       name: 'Primary Skill',
       validators: [Validators.required]
     },
-    interviewRounds: {
+    level: {
       name: 'Interview Levels',
       validators: [Validators.required]
     }
@@ -27,7 +28,7 @@ export class InterviewerformComponent implements OnInit {
 
   controls: any[] = [];
 
-  constructor() { }
+  constructor(private interviewService: InterviewerDataServiceService ) { }
 
   ngOnInit(): void {
     this.createInterviewerForm();
@@ -46,7 +47,10 @@ export class InterviewerformComponent implements OnInit {
   }
 
   onSubmit() {
-
+    
+    this.interviewService.addInterviewerData(this.intrForm.value).subscribe(d=>{
+      console.log(d)
+     });
   }
 
   onClear() {

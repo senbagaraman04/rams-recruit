@@ -12,6 +12,7 @@ public class InterviewerService {
 
 
     public Interviewer[] getAllInterviewer(){
+
         return intrvRepo.getallInterviewer();
     }
 

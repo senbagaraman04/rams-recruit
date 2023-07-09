@@ -21,9 +21,8 @@ public class Interviewer implements Serializable {
     private int id;
     @Column(name="name")
     String name;
-    @Column(name="email")
-    String  email;
-    @Column(name="phoneNumber")
-    String phoneNumber;
-
+    @Column(name="level")
+    String level;
+    @Column(name="skill")
+    String skill;
 }
